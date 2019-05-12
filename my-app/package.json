@@ -5,6 +5,8 @@
   "dependencies": {
     "@babel/core": "^7.4.4",
     "antd": "^3.17.0",
+    "mobx": "^5.9.4",
+    "mobx-react-lite": "^1.3.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
@@ -34,7 +36,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
+    "less": "^3.9.0",
     "parcel-bundler": "^1.12.3"
   }
 }
