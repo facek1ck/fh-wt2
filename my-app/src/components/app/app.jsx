@@ -16,8 +16,8 @@ const App = () => {
             <TabsCard />
          </div>
          <div className="modalButton">
+           <CollectionsPage />
          </div>
-         <CollectionsPage />
         </div>
     </div>
   );
