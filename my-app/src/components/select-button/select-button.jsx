@@ -9,8 +9,14 @@ const SelectButton = () => {
   return(
   <div className="custom-button-group">
   <ButtonGroup>
-  <Button type="ghost" className="left-select-btn">Offline</Button>
-  <Button className="right-select-btn">Online</Button>
+  <Button type="danger" className="left-select-btn">
+    <h4>Offline</h4> 
+    Lokalen Test laden
+  </Button>
+  <Button type="danger" className="right-select-btn">
+    <h4>Online</h4>
+    Test online durchführen.
+  </Button>
   </ButtonGroup>
   </div>
   )

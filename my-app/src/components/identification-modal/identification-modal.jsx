@@ -74,7 +74,7 @@ import {
     render() {
       return (
         <div>
-          <Button type="primary" onClick={this.showModal}>New Collection</Button>
+          <Button size="large" type="primary" onClick={this.showModal}>Weiter</Button>
           <CollectionCreateForm
             wrappedComponentRef={this.saveFormRef}
             visible={this.state.visible}

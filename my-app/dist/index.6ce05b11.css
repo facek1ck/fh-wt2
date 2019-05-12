@@ -9,10 +9,11 @@ code {
 }
 
 .custom-button-group .ant-btn {
-  width: 350px;
+  width: 250px;
   min-height: 400px;
   margin-bottom: 50px;
   box-shadow: 10px 10px 16px 2px rgba(0, 0, 0, 0.3);
+  color: black;
 }
 .custom-button-group .left-select-btn {
   margin-right: 50px;
@@ -42,6 +43,9 @@ code {
 }
 .mainScreen .ant-btn-group {
   margin-top: 10vh;
+}
+.modalButton .ant-btn {
+  width: 550px;
 }
 
 /*!
