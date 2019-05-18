@@ -2,8 +2,7 @@ import React from 'react';
 import {
     Button, Modal, Form, Input, notification
   } from 'antd';
-import {observer} from 'mobx-react';
-import { decorate } from 'mobx';
+
 import {inject} from 'mobx-react';
 
 const openNotificationWithIcon = type => {
@@ -60,7 +59,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
   export default class OfflineLogIn extends React.Component {
     state = {
       visible: false,
-      step: 1,
+      step: 1
     };
 
     nextStep = () => {
@@ -72,6 +71,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 
     prevStep = () => {
       const { step } = this.state;
+      this.props.store.user = undefined;
       this.setState({
         step: step - 1
       });
@@ -85,6 +85,11 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
       this.setState({ visible: false });
     }
   
+
+    handleOk = () => {
+      this.setState({ visible: false});
+    }
+
     handleCreate = () => {
       const form = this.formRef.props.form;
       form.validateFields((err, values) => {
@@ -139,14 +144,15 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
         case 2:
           return(
             <Modal
-            title="Is that you?"
-            visible={this.state.visible}
-            onOk={this.handleOk}
-            onCancel={this.prevStep}
-          >
-            <p>{this.props.store.user.id}</p>
-            <p>{this.props.store.user.firstName}</p>
-            <p>{this.props.store.user.lastName}</p>
+
+              title="Validierung"
+              visible={this.state.visible}
+              onOk={this.handleOk}
+              okText="Ja"
+              cancelText="Nein"
+              onCancel={this.prevStep}
+          > 
+            <p>Sind Sie {this.props.store.user.firstName} {this.props.store.user.lastName}?</p>
           </Modal>
           );
       }

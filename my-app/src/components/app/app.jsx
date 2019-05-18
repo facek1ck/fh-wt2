@@ -14,7 +14,7 @@ class App extends Component {
     <Provider store={store}>
     <div className="App">
       <header className="App-header">
-      Webtechnologien 2 Projekt
+      WT2 Projekt
       </header>
         <div className="mainScreen">
           <div className="selectMode">
