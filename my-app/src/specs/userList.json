@@ -1,0 +1,37 @@
+[
+    {
+        "id":"1",
+        "firstName":"Gabriel",
+        "lastName":"Asherov",
+        "tests":["A","C","D"],
+        "taken":["D"]
+    },
+    {
+        "id":"2",
+        "firstName":"Thomas",
+        "lastName":"Macek",
+        "tests":["A","B"],
+        "taken":["A"]
+    },
+    {
+        "id":"3",
+        "firstName":"Thomas",
+        "lastName":"Fankhauser",
+        "tests":["C","D","F","G"],
+        "taken":["C","G"]
+    },
+    {
+        "id":"4",
+        "firstName":"Michael",
+        "lastName":"Weissenböck",
+        "tests":["A","C","D","B"],
+        "taken":["C"]
+    },
+    {
+        "id":"5",
+        "firstName":"Gregor",
+        "lastName":"Holli",
+        "tests":["A","E","G"],
+        "taken":["A"]
+    }
+]

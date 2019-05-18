@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import TabsCard  from '../select-button/select-button';
 import './App.less';
 import 'antd/dist/antd.css';
-import CollectionsPage from '../identification-modal/identification-modal';
+import StoreClass from '../store-component/store';
+import { Provider } from 'mobx-react';
+
+const store = new StoreClass();
 
 
-const App = () => {
+class App extends Component {
+  render(){
   return (
+    <Provider store={store}>
     <div className="App">
       <header className="App-header">
       Webtechnologien 2 Projekt
@@ -15,12 +20,10 @@ const App = () => {
           <div className="selectMode">
             <TabsCard />
          </div>
-         <div className="modalButton">
-           <CollectionsPage />
-         </div>
         </div>
     </div>
+    </Provider>
   );
 }
-
+}
 export default App;

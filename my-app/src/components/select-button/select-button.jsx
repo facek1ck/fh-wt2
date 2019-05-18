@@ -1,25 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Button } from 'antd';
 import './select-button.less';
+import OfflineLogIn from '../identification-modal-offline/identification-modal-offline';
+import OnlinelineLogIn from '../identification-modal-online/identification-modal-online';
+import OnlineLogIn from '../identification-modal-online/identification-modal-online';
+
 
 
 const ButtonGroup = Button.Group;
 
-const SelectButton = () => {
+
+class SelectButton extends Component {
+  render(){
   return(
   <div className="custom-button-group">
   <ButtonGroup>
-  <Button type="danger" className="left-select-btn">
-    <h4>Offline</h4> 
-    Lokalen Test laden
-  </Button>
-  <Button type="danger" className="right-select-btn">
-    <h4>Online</h4>
-    Test online durchführen.
-  </Button>
+  <OfflineLogIn/>
+  <OnlineLogIn/>
   </ButtonGroup>
   </div>
-  )
+  );
+}
 }
 
 export default SelectButton;
