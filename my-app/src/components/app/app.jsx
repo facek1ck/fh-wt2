@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import TabsCard  from '../select-button/select-button';
 import QuizApp from '../quiz/quiz';
-
 import './App.less';
 import 'antd/dist/antd.css';
-
 import StoreClass from '../store-component/store';
-
 import { Provider, observer } from 'mobx-react';
 import { Form, Button, Icon } from 'antd';
 import NavBar from '../nav-bar/nav-bar';

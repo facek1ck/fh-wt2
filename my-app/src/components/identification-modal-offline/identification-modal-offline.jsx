@@ -86,7 +86,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
   
     handleOk = () => {
       this.setState({ visible: false});
-      this.props.handleClick("home");
+      this.props.handleClick("tests");
     }
 
     handleCreate = () => {

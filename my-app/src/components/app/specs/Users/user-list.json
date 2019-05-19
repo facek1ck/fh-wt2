@@ -3,35 +3,35 @@
         "id":"1",
         "firstName":"Gabriel",
         "lastName":"Asherov",
-        "tests":["A","C","D"],
-        "taken":["D"]
+        "tests":["Computer","Geographie","Essen"],
+        "taken":["Computer"]
     },
     {
         "id":"2",
         "firstName":"Thomas",
         "lastName":"Macek",
-        "tests":["A","B"],
-        "taken":["A"]
+        "tests":["Geographie","Filme"],
+        "taken":["Geographie"]
     },
     {
         "id":"3",
         "firstName":"Thomas",
         "lastName":"Fankhauser",
-        "tests":["C","D","F","G"],
-        "taken":["C","G"]
+        "tests":["Computer","Geographie","Essen","Filme"],
+        "taken":["Essen","Filme"]
     },
     {
         "id":"4",
         "firstName":"Michael",
         "lastName":"Weissenböck",
-        "tests":["A","C","D","B"],
-        "taken":["C"]
+        "tests":["Computer","Geographie","Essen","Filme"],
+        "taken":["Essen"]
     },
     {
         "id":"5",
         "firstName":"Gregor",
         "lastName":"Holli",
-        "tests":["A","E","G"],
-        "taken":["A"]
+        "tests":["Computer","Essen","Filme"],
+        "taken":["Filme"]
     }
 ]

@@ -5,8 +5,10 @@
   "dependencies": {
     "@babel/core": "^7.0.0-0",
     "antd": "^3.17.0",
+    "app": "^0.1.0",
     "axios": "^0.18.0",
     "index.js": "^0.0.3",
+    "json-loader": "^0.5.7",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.4",
     "mobx-react-devtools": "^6.1.1",
