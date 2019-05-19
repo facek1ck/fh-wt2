@@ -6,7 +6,7 @@ import './auth-form.less';
 const AuthForm = () => {
 
   return(
-  <div> 
+  <div className="selectMode"> 
   <div className="custom-button-group">
     <Radio.Group defaultValue="a" buttonStyle="solid">
     <Radio.Button value="a" className="left-select-btn">

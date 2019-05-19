@@ -1,14 +1,24 @@
 import React, {Component} from 'react';
-import TabsCard  from '../select-button/select-button';
+import SelectButton  from '../select-button/select-button';
+import { inject, observer } from 'mobx-react';
 import './App.less';
 import 'antd/dist/antd.css';
 import StoreClass from '../store-component/store';
+<<<<<<< HEAD
 import { Provider, observer } from 'mobx-react';
 import { Form, Button } from 'antd';
 
 
 const store = new StoreClass();
 
+=======
+import { Provider } from 'mobx-react';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import TestList from '../test-list/test-list';
+import Navigation from '../navigation/navigation';
+
+@inject('routing')
+>>>>>>> test-list
 @observer
 class App extends Component {
   constructor(props) {
@@ -26,8 +36,8 @@ class App extends Component {
   }
 
   render(){
+    const { location, push, goBack } = this.props.routing;
   return (
-    <Provider store={store}>
     <div className="App">
       <header className="App-header">
       WT2 Projekt
@@ -39,7 +49,6 @@ class App extends Component {
          </div>
         </div>
     </div>
-    </Provider>
   );
 }
 }
