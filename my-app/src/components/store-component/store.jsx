@@ -5,6 +5,6 @@ export default class StoreClass {
    @observable counter;
    @observable viewState = "login";
    @observable online = false;
-   @observable tests;
+   @observable quiz;
 }
 

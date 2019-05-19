@@ -35,7 +35,6 @@ export default class TestList extends Component {
                     ...this.state,
                     tests: response.data
                 })
-            //tmp=response.data;
             })
         } else {
             const tests = store.user.tests
@@ -50,13 +49,19 @@ export default class TestList extends Component {
         }
     }
 
+    redirectToTest(quiz){
+        this.props.store.quiz = quiz
+        console.log(this.props.store);
+        //this.props.handleClick("quiz")
+    }
+
     renderTests() {
         return this.state.tests.map(test => 
             <Card
             key={test.name}
             style={{ width: '60%', margin: '30px auto'}}
             extra={
-                <Button type="primary">
+                <Button type="primary" onClick={() => this.redirectToTest(test)}>
                     Take Test
                 </Button>
             }
