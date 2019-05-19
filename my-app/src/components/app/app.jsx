@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import TabsCard  from '../select-button/select-button';
+import QuizApp from '../quiz/quiz';
+
 import './App.less';
 import 'antd/dist/antd.css';
+
 import StoreClass from '../store-component/store';
+
 import { Provider, observer } from 'mobx-react';
-import { Form, Button } from 'antd';
+import { Form, Button, Icon } from 'antd';
 import NavBar from '../nav-bar/nav-bar';
-import { Icon } from 'antd';
+import TestList from '../test-list/test-list';
+
 
 
 const store = new StoreClass();
@@ -47,7 +52,9 @@ class App extends Component {
         <div className="mainScreen">
             {this.state.view == "login" ? <TabsCard handleClick = {this.handleClick}/>: undefined}
             {this.state.view == "dashboard" ? <h1> dashboard </h1>: undefined}
-        </div>
+            {this.state.view == "tests" ? <TestList handleClick = {this.handleClick}/>: undefined}
+            {this.state.view == "quiz" ? <QuizApp handleClick = {this.handleClick}/>: undefined} 
+         </div>
     </div>
     </Provider>
   );
