@@ -6,6 +6,7 @@ import StoreClass from '../store-component/store';
 import { Provider, observer } from 'mobx-react';
 import { Form, Button } from 'antd';
 
+
 const store = new StoreClass();
 
 @observer
@@ -24,7 +25,6 @@ class App extends Component {
     }))
   }
 
-
   render(){
   return (
     <Provider store={store}>
@@ -38,7 +38,6 @@ class App extends Component {
             {this.state.view == "dashboard" ? <h1> dashboard </h1>: undefined}
          </div>
         </div>
-        <button onClick={this.handleClick}>Test</button>
     </div>
     </Provider>
   );
