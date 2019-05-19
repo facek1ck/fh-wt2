@@ -35,27 +35,31 @@ class App extends Component {
     this.handleClick("login");
   }
 
-  render(){
-  return (
-    <Provider store={store}>
-    <div className="App">
-      <header className="App-header">
-      <span className="titleBlock">WT2 Projekt
-      {this.state.view != "login" && !store.online ? <Icon type="poweroff" className="logoutIcon2" onClick={this.logout}/>: undefined}</span>
-      <div className="navBar">
-      {this.state.view != "login" && store.online ? <NavBar handleClick = {this.handleClick}/>: undefined}
+  renderApp(){
+    return (
+      <Provider store={store}>
+      <div className="App">
+        <header className="App-header">
+        <span className="titleBlock">WT2 Projekt
+        {this.state.view != "login" && !store.online ? <Icon type="poweroff" className="logoutIcon2" onClick={this.logout}/>: undefined}</span>
+        <div className="navBar">
+        {this.state.view != "login" && store.online ? <NavBar handleClick = {this.handleClick}/>: undefined}
+        </div>
+        </header>
+          <div className="mainScreen">
+              {this.state.view == "login" ? <TabsCard handleClick = {this.handleClick}/>: undefined}
+              {this.state.view == "dashboard" ? <h1> dashboard </h1>: undefined}
+              {this.state.view == "tests" ? <TestList handleClick = {this.handleClick}/>: undefined}
+              {this.state.view == "quiz" ? <QuizApp handleClick = {this.handleClick}/>: undefined} 
+           </div>
       </div>
-      </header>
-        <div className="mainScreen">
-            {this.state.view == "login" ? <TabsCard handleClick = {this.handleClick}/>: undefined}
-            {this.state.view == "dashboard" ? <h1> dashboard </h1>: undefined}
-            {this.state.view == "tests" ? <TestList handleClick = {this.handleClick}/>: undefined}
-            {this.state.view == "quiz" ? <QuizApp handleClick = {this.handleClick}/>: undefined} 
-         </div>
-    </div>
-    </Provider>
-  );
-}
+      </Provider>
+    );
+  }
+
+  render(){
+    return this.renderApp();
+  }
 }
 export default App;
 

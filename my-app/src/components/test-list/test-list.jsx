@@ -54,7 +54,7 @@ export default class TestList extends Component {
         return this.state.tests.map(test => 
             <Card
             key={test.name}
-            style={{ width: 450, marginTop: 16 }}
+            style={{ width: '60%', margin: '30px auto'}}
             extra={
                 <Button type="primary">
                     Take Test
@@ -64,7 +64,7 @@ export default class TestList extends Component {
         >
             <Meta
                 avatar={
-                    <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>A</Avatar>
+                    <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>{test.name[0]}</Avatar>
                 }
                 description={test.description}
             /> 
@@ -75,7 +75,7 @@ export default class TestList extends Component {
         const tests = this.renderTests()
 
         return(  
-            <div>
+            <div className="tests">
             {tests}
             </div> 
         )

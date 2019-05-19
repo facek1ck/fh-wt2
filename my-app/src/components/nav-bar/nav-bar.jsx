@@ -36,8 +36,7 @@ class NavBar extends React.Component {
     this.props.handleClick(e.key);
   };
 
-  
-  render() {
+  renderMenuBar(){
     return (
       <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
         <Menu.Item key="home" className="navbutton">
@@ -57,6 +56,10 @@ class NavBar extends React.Component {
        </Menu.Item> 
       </Menu>
     );
+  }
+
+  render() {
+    return this.renderMenuBar();
   }
 }
 
