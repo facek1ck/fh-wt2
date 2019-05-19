@@ -16,7 +16,7 @@ class SelectButton extends Component {
   <div className="custom-button-group">
   <ButtonGroup>
   <OfflineLogIn handleClick = {this.props.handleClick}/>
-  <OnlineLogIn/>
+  <OnlineLogIn handleClick = {this.props.handleClick}/>
   </ButtonGroup>
   </div>
   );
