@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Button, Modal, Form, Input, notification
   } from 'antd';
-
 import {inject} from 'mobx-react';
 
 const openNotificationWithIcon = type => {
@@ -85,9 +84,9 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
       this.setState({ visible: false });
     }
   
-
     handleOk = () => {
       this.setState({ visible: false});
+      this.props.handleClick("dashboard");
     }
 
     handleCreate = () => {
@@ -144,7 +143,6 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
         case 2:
           return(
             <Modal
-
               title="Validierung"
               visible={this.state.visible}
               onOk={this.handleOk}

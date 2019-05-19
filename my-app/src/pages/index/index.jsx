@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.less';
 import App from '../../components/app/app';
 import store from '../../components/store-component/store';
-
 import axios from 'axios';
+
+
 
 window.addEventListener('beforeunload', (event) => {
     console.log("POST");
