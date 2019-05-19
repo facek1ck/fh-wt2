@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import StoreClass from '../store-component/store';
 import { Provider, observer } from 'mobx-react';
 import { Form, Button } from 'antd';
+import NavBar from '../nav-bar/nav-bar'
 
 
 const store = new StoreClass();
@@ -31,12 +32,13 @@ class App extends Component {
     <div className="App">
       <header className="App-header">
       WT2 Projekt
+      <div className="navBar">
+      {this.state.view != "login" ? <NavBar handleClick = {this.handleClick}/>:undefined}
+      </div>
       </header>
         <div className="mainScreen">
-          <div className="selectMode">
             {this.state.view == "login" ? <TabsCard handleClick = {this.handleClick}/>: undefined}
             {this.state.view == "dashboard" ? <h1> dashboard </h1>: undefined}
-         </div>
         </div>
     </div>
     </Provider>
