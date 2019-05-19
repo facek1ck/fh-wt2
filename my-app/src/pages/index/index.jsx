@@ -27,7 +27,7 @@ window.addEventListener('beforeunload', (event) => {
 
 
   ReactDOM.render(
-    <App store={store}/>,  document.getElementById('root'));
+    <App store={store}/>, document.getElementById('root'));
   
 
 

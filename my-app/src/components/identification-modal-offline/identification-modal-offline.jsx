@@ -3,8 +3,6 @@ import {
     Button, Modal, Form, Input, notification
   } from 'antd';
 import {inject} from 'mobx-react';
-import { Redirect } from 'react-router-dom';
-import TestList from '../test-list/test-list.jsx';
 
 const openNotificationWithIcon = type => {
   notification[type]({
@@ -56,13 +54,12 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
 
   
 
-  @inject("store", "routing")
+  @inject("store")
   export default class OfflineLogIn extends React.Component {
     state = {
       visible: false,
       step: 1
     };
-    
 
     nextStep = () => {
       const { step } = this.state;
@@ -88,7 +85,6 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
     }
   
     handleOk = () => {
-      const { location, push, goBack, go } = this.props.routing;
       this.setState({ visible: false});
       this.props.handleClick("dashboard");
     }
@@ -129,8 +125,8 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
     }
   
     render() {
-     
       const { step } = this.state;
+      
       switch(step) {
         case 1:
           return (
@@ -154,10 +150,9 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
               cancelText="Nein"
               onCancel={this.prevStep}
           > 
-            <p>Sind Sie {this.props.store.user.firstName} {this.props.store.user.lastName}?</p>            
+            <p>Sind Sie {this.props.store.user.firstName} {this.props.store.user.lastName}?</p>
           </Modal>
           );
-
       }
     }
-  }
+}
