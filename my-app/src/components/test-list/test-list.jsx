@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { Card, Avatar, Button } from 'antd';
 import { observer, inject } from 'mobx-react';
-import { withRouter } from 'react-router';
 import './test-list.less';
 
 const { Meta } = Card;
 
-@inject("store", "routing")
-@withRouter
-@observer
+@inject("store")
 export default class TestList extends Component {
     render() {
         const store = this.props.store;
