@@ -52,7 +52,7 @@ export default class TestList extends Component {
     redirectToTest(quiz){
         this.props.store.quiz = quiz
         console.log(this.props.store);
-        //this.props.handleClick("quiz")
+        this.props.handleClick("quiz")
     }
 
     renderTests() {

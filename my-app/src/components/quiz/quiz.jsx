@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-
-import quizQuestions from './question-config';
+//import quizQuestions from './question-config';
 import Quiz from './quiz-components/quiz-component';
 import Result from './quiz-components/result';
-
 import './quiz.less';
+import { inject } from 'mobx-react';
 
+
+@inject("store")
 export default class QuizApp extends Component {
+
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -37,6 +40,8 @@ export default class QuizApp extends Component {
     }
 
     componentWillMount() {
+      let quizQuestions = this.props.store.quiz.questions;
+      console.log(quizQuestions[0].answers);
         this.setState({
           question: quizQuestions[0].question,
           answerOptions : quizQuestions[0].answers,
@@ -47,7 +52,7 @@ export default class QuizApp extends Component {
       setNextQuestion() {
         const counter = this.state.counter + 1;
         const questionId = this.state.questionId + 1;
-    
+        let quizQuestions = this.props.store.quiz.questions;
         this.setState({
           counter: counter,
           questionId: questionId,
@@ -60,7 +65,7 @@ export default class QuizApp extends Component {
       setPreviousQuestion() {
         const counter = this.state.counter - 1;
         const questionId = this.state.questionId - 1;
-    
+        let quizQuestions = this.props.store.quiz.questions;
         this.setState({
           counter: counter,
           questionId: questionId,
@@ -88,6 +93,9 @@ export default class QuizApp extends Component {
       }
 
       renderQuiz() {
+        // let question = this.props.store.quiz.questions[1];
+        // // console.log(question.question);
+        // // console.log(question.answers);
         return (
           <Quiz viewreults={this.viewreults}
             setNextQuestion={this.setNextQuestion}
@@ -98,7 +106,7 @@ export default class QuizApp extends Component {
             answerOptions={this.state.answerOptions}
             questionId={this.state.questionId}
             question={this.state.question}
-            questionTotal={quizQuestions.length}
+            questionTotal={this.props.store.quiz.questions.length}
             onAnswerSelected = {this.handleAnswerSelected}
           />
         );

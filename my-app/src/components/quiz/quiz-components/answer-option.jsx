@@ -1,12 +1,17 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Radio } from 'antd';
+
+// class App extends React.Component {
+//     state = {
+//       value: 1,
+//     };
 
 
 const AnswerOption = (props) => {
 
     return(
         <div className="answer-option">
-            <Button
+            <Radio
                 id="answer-button"
                 size="large"
                 type="primary"
@@ -16,7 +21,8 @@ const AnswerOption = (props) => {
                 onClick={props.onAnswerSelected}
             >
                 {props.answerContent}
-            </Button>
+
+            </Radio>
 
         </div>
     )

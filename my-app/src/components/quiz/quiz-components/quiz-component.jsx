@@ -10,14 +10,14 @@ const Quiz = (props) => {
     function renderAnswerOptions(key,index) {
         return (
           <AnswerOption
-            index ={index}
-            key={key.content}
-            answerContent={key.content}
-            answerType={key.type}
-            answer={props.answer}
-            questionId={props.questionId}
-            selectedAnswer={props.selectedAnswer}
-            onAnswerSelected={props.onAnswerSelected}
+          index ={index}
+          key={key}
+          answerContent={key}
+          answerType={key}
+          answer={props.answer}
+          questionId={props.questionId}
+          selectedAnswer={props.selectedAnswer}
+          onAnswerSelected={props.onAnswerSelected}
           />
         );
       }
@@ -34,8 +34,8 @@ const Quiz = (props) => {
           </ul>
           <div className="bottom-footer" >
             {props.counter > 0 ? (<Button className="Previous-btn" onClick={props.setPreviousQuestion} >Previous</Button>) : (<div></div>)}
-  
-            {props.counter < 4 ? (<Button className="next-btn" onClick={props.setNextQuestion} >Next</Button>) : (<div></div>)}
+      {/* hier gehört der counter dynamisch */}
+            {props.counter < 9 ? (<Button className="next-btn" onClick={props.setNextQuestion} >Next</Button>) : (<div></div>)}
   
         </div>
         </div>
