@@ -61,7 +61,7 @@ class App extends Component {
           </header>
           <div className="mainScreen">
             {this.state.view == "login" ? (
-              <Dashboard handleClick={this.handleClick} />
+              <TabsCard handleClick={this.handleClick} />
             ) : (
               undefined
             )}
