@@ -1,18 +1,16 @@
-import React from 'react';
-import { Card, Progress } from 'antd';
+import React from "react";
+import { Card, Progress } from "antd";
 
-const StatisticCard = (props) => {
-    return(
-        <Card
-        title="Question" 
-        style={{ width: 500 }}
-        >
-            <Progress percent={100} />
-            <Progress percent={50} status="active" />
-            <Progress percent={70} status="exception" />
-        </Card>
-    )
-
-}
+const StatisticCard = props => {
+  const all = props.results.correct + props.results.false;
+  const correct = (props.results.correct / all) * 100;
+  const falseAnsw = (props.results.false / all) * 100;
+  return (
+    <Card title={props.name} style={{ width: 500 }}>
+      <Progress percent={correct} />
+      <Progress percent={falseAnsw} status="exception" />
+    </Card>
+  );
+};
 
 export default StatisticCard;
