@@ -15,7 +15,7 @@ class NavBar extends React.Component {
           var headers = {
               'Content-Type': 'application/json'
             }
-            axios.post('http://gabriels-macbook.local:3000/requests/heartbeat',{
+            axios.post('http://localhost:3000/requests/heartbeat',{
                 lastName: this.props.store.user.lastName,
                 online: false
             },{headers:headers})

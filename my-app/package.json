@@ -9,24 +9,27 @@
     "axios": "^0.18.0",
     "global": "^4.3.2",
     "index.js": "^0.0.3",
+    "jest": "^24.8.0",
     "json-loader": "^0.5.7",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.4",
     "mobx-react-devtools": "^6.1.1",
     "mobx-react-lite": "^1.3.2",
     "mobx-react-router": "^4.0.7",
+    "mz": "^2.7.0",
     "node-gyp": "^4.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
+    "supertest": "^4.0.2",
     "typescript": "^3.4.5"
   },
   "scripts": {
     "start": "parcel serve public/index.html --open --port 4000",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,12 +50,16 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
+    "babel-jest": "^24.8.0",
     "babel-plugin-inline-json-import": "^0.3.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "babel-preset-mobx": "^2.0.0",
     "less": "^3.9.0",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "react-test-renderer": "^16.8.6"
   }
 }

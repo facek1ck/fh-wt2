@@ -86,7 +86,7 @@ const openNotificationWithIcon = type => {
       var headers = {
         'Content-Type': 'application/json'
       }
-      axios.post('http://gabriels-macbook.local:3000/requests/heartbeat',{
+      axios.post('http://localhost:3000/requests/heartbeat',{
           lastName: this.props.store.user.lastName,
           online: true
       },{headers:headers})
@@ -110,7 +110,7 @@ const openNotificationWithIcon = type => {
         console.log('Received values of form: ', values);
         
         
-        axios.get('http://gabriels-macbook.local:3000/users').then(response => {
+        axios.get('http://localhost:3000/users').then(response => {
           console.log(response);
           var success;
         response.data.forEach(element => {

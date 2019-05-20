@@ -30,7 +30,7 @@ export default class TestList extends Component {
     getTests() {
         const { store } = this.props
         if(store.online){
-            axios.get('http://gabriels-macbook.local:3000/users/'+store.user.id+'/open').then(response => {
+            axios.get('http://localhost:3000/users/'+store.user.id+'/open').then(response => {
                 this.setState({
                     ...this.state,
                     tests: response.data
