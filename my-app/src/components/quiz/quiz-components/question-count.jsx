@@ -4,8 +4,7 @@ const QuestionCount = (props) => {
 
   return (
     <div className="questionCount">
-      Question <span>{props.counter}</span> of <span>{props.total}</span>
-       {props.counter === 5 ? (<a className="result-link" href="" onClick={props.viewreults}>View Results</a>) : (<div></div>)}
+      Question <span>{props.counter+1}</span> of <span>{props.total}</span> 
     </div>
   );
 

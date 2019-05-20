@@ -37,6 +37,7 @@ export default class QuizApp extends Component {
         // create map and store all selecred answers with quiz Questions
         obj[Qindex] = index;
         _self.setState({selectedAnswers : obj})
+        console.log(obj);
     }
 
     componentWillMount() {
@@ -45,7 +46,7 @@ export default class QuizApp extends Component {
         this.setState({
           question: quizQuestions[0].question,
           answerOptions : quizQuestions[0].answers,
-          allQuestions : quizQuestions
+          allQuestions : quizQuestions,
         });
       }
 

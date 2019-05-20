@@ -51,6 +51,11 @@
             "id":"10",
             "question":"Was ist ein Modem?",
             "answers":["ein Datenwandler","ein Gleichrichter","ein Umspanner","ein Temperaturregler"]
+        },
+        {
+            "id":"11",
+            "question":"Von wem war der erste Computer?",
+            "answers":["Conrad Zuse","Steve Jobs","Mark Zuckerberg","Bill Gates"]
         }
     ]
 }

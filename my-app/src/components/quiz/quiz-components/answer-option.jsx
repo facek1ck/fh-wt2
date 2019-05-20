@@ -21,7 +21,6 @@ const AnswerOption = (props) => {
                 onClick={props.onAnswerSelected}
             >
                 {props.answerContent}
-
             </Radio>
 
         </div>

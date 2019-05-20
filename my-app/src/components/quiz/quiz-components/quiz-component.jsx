@@ -25,7 +25,6 @@ const Quiz = (props) => {
       return (
         <div key={props.questionId} className="quiz-story">
           <QuestionCount counter={props.counter} viewreults={props.viewreults}
-            counter={props.questionId}
             total={props.questionTotal}
           />
           <Question  content={props.question} />
@@ -34,9 +33,11 @@ const Quiz = (props) => {
           </ul>
           <div className="bottom-footer" >
             {props.counter > 0 ? (<Button className="Previous-btn" onClick={props.setPreviousQuestion} >Previous</Button>) : (<div></div>)}
-      {/* hier gehört der counter dynamisch */}
-            {props.counter < 9 ? (<Button className="next-btn" onClick={props.setNextQuestion} >Next</Button>) : (<div></div>)}
-  
+
+            {props.counter < (props.questionTotal-1) ? (<Button className="next-btn" onClick={props.setNextQuestion} >Next</Button>) : undefined}
+            <br>
+            </br>
+            {props.counter < (props.questionTotal-1) ? undefined:(<Button className="next-btn" href="" onClick={props.viewreults}>Abgeben</Button>)}
         </div>
         </div>
     );
