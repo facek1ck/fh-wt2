@@ -1,0 +1,67 @@
+{
+  "name": "Filme",
+  "description": "Dies ist ein Quiz über Filme und Schauspieler.",
+  "time": "5",
+  "questions": [
+    {
+      "id": "1",
+      "question": "Wie heißt der Anführer der Springfielder Mafia in der TV-Serie Die Simpsons?",
+      "answers": ["Lionel Hutz", "Luigi Risotto", "Herman", "Fat Tony"]
+    },
+    {
+      "id": "2",
+      "question": "Welche Farbe hat Paulchen Panther? ",
+      "answers": ["Nachtschwarz", "Rosarot", "Giftgrün", "Quittengelb"]
+    },
+    {
+      "id": "3",
+      "question": "Auf welchem Fernsehsender läuft: 'Deutschland sucht den Superstar'? ",
+      "answers": ["RTL", "MTV", "ZDF", "VIVA"]
+    },
+    {
+      "id": "4",
+      "question": "In welchem Film spielte Loriot nicht mit?",
+      "answers": ["Ödipussi", "die Brücke", "der längste Tag", "die Sünderin"]
+    },
+    {
+      "id": "5",
+      "question": "Welcher Schauspieler gehört nicht zum Cast der US-Comedy-Serie 'How I met your mother'?",
+      "answers": [
+        "Neil Patrick Harris",
+        "Josh Radnor",
+        "Christopher Kennedy Masterson",
+        "Jason Segel"
+      ]
+    },
+    {
+      "id": "6",
+      "question": "'Ich hätte da noch eine Frage ...'' ist ein typischer Satz von Inspektor...?",
+      "answers": ["Columbo", "Kojak", "Derrick", "Maigret"]
+    },
+    {
+      "id": "7",
+      "question": "Wie heißt die erfolgreiche Serie von Miley Cyrus?",
+      "answers": ["Hannah Montana", "I Carly", "Zoey 101", "Sponge Bob"]
+    },
+    {
+      "id": "8",
+      "question": "Wer war in den 80er-Jahren während der Perestroika ARD-Korrespondent in Moskau?",
+      "answers": [
+        "Dieter Kronzucker",
+        "Peter Scholl-Latour",
+        "Gerd Ruge",
+        "Ulrich Wickert"
+      ]
+    },
+    {
+      "id": "9",
+      "question": "Wer spielt den Zoodirektor Rollo, in der US-amerikanisch-britischen Filmkomödie 'Wilde Kreaturen', aus dem Jahr 1997?",
+      "answers": ["Rowan Atkinson", "John Cleese", "Will Smith", "Bill Murray"]
+    },
+    {
+      "id": "10",
+      "question": "Wie heißt eine filmische Trilogie von Edgar Reitz?",
+      "answers": ["Kindheit", "Deutschland", "Landschaften", "Heimat"]
+    }
+  ]
+}

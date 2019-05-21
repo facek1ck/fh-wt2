@@ -62,7 +62,8 @@ class NavBar extends React.Component {
         </Menu.Item>
         <Menu.Item className="logout" key="logout">
           <Icon type="poweroff" className="logoutIcon" />
-          Logout ({this.props.store.user.firstName} {this.props.store.user.lastName})
+          Logout ({this.props.store.user.firstName}{" "}
+          {this.props.store.user.lastName})
         </Menu.Item>
       </Menu>
     );

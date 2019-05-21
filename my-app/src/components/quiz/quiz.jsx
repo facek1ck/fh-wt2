@@ -5,6 +5,8 @@ import Result from "./quiz-components/result";
 import "./quiz.less";
 import { inject } from "mobx-react";
 import axios from "axios";
+import { Card } from "antd";
+import Countdown from "react-countdown-now";
 
 @inject("store")
 export default class QuizApp extends Component {
@@ -23,7 +25,10 @@ export default class QuizApp extends Component {
     this.setNextQuestion = this.setNextQuestion.bind(this);
     this.setPreviousQuestion = this.setPreviousQuestion.bind(this);
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
-    this.viewreults = this.viewreults.bind(this);
+    this.viewresults = this.viewresults.bind(this);
+    this.renderer = this.renderer.bind(this);
+
+    this.startTime = Date.now();
   }
 
   handleAnswerSelected(e) {
@@ -104,7 +109,7 @@ export default class QuizApp extends Component {
   renderQuiz() {
     return (
       <Quiz
-        viewreults={this.viewreults}
+        viewresults={this.viewresults}
         setNextQuestion={this.setNextQuestion}
         counter={this.state.counter}
         setPreviousQuestion={this.setPreviousQuestion}
@@ -130,8 +135,27 @@ export default class QuizApp extends Component {
     );
   }
 
-  viewreults(e) {
-    e.preventDefault();
+  // Renderer callback with condition
+  renderer({ hours, minutes, seconds, completed }) {
+    if (completed) {
+      // Render a completed state
+      // console.log(this);
+      this.viewresults();
+      return null;
+    } else {
+      // Render a countdown
+      return (
+        <span>
+          {hours}:{minutes}:{seconds}
+        </span>
+      );
+    }
+  }
+
+  viewresults(e) {
+    if (!!e) {
+      e.preventDefault();
+    }
     let resultfile = function(name, uid, answers) {
       this.name = name;
       this.userid = uid;
@@ -184,11 +208,20 @@ export default class QuizApp extends Component {
   render() {
     return (
       <div className="Quiz">
-        <div className="Quiz-header">
-          <h2>Quiz Assignment :</h2>
-        </div>
-
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        <Card style={{ width: 750 }} className="QuizCard">
+          <div className="Quiz-header">
+            <h2>Quiz Assignment :</h2>
+          </div>
+          <div className="coutdown">
+            {this.state.result ? null : (
+              <Countdown
+                date={this.startTime + this.props.store.quiz.time * 60000}
+                renderer={this.renderer}
+              />
+            )}
+          </div>
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
+        </Card>
       </div>
     );
   }

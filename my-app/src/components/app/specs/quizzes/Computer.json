@@ -1,64 +1,82 @@
 {
-    "name":"Computer",
-    "description":"Dies ist ein Quiz über unterschiedliche Bereiche der EDV.",
-    "questions":[
-        {
-            "id":"1",
-            "question":"Wofür steht VPN?",
-            "answers":["Visual Phone Network","Virtual Private Network","Virtual Public Network","Visual Pro Network"]
-        },
-        {
-            "id":"2",
-            "question":"Was bedeutet Copyright?",
-            "answers":["Kopierrecht","Vervielfältigungsrecht","Haftungsausschluss","Urheberrecht"]
-        },
-        {
-            "id":"3",
-            "question":"Wofür steht die Abkürzung USB?",
-            "answers":["Universal Satellite Bus","Universal Serial Bus","Universal System Bus","Universal Software Bus"]
-        },
-        {
-            "id":"4",
-            "question":"Wie hieß der erste Mikroprozessor?",
-            "answers":["Apple 44","Intel 404","Pentium 1","Intel 4004"]
-        },
-        {
-            "id":"5",
-            "question":"Welcher Fehlercode erscheint bei einer nicht gefundenen Internetseite?",
-            "answers":["202","404","303","505"]
-        },
-        {
-            "id":"6",
-            "question":"Was gibt genau den Ort einer Datei an?",
-            "answers":["Weg","Strecke","Pfad","Straße"]
-        },
-        {
-            "id":"7",
-            "question":"Welches dieser Begriffe ist ein Betriebssystem?",
-            "answers":["Photoshop","Windows","Excel","Netscape Navigator"]
-        },
-        {
-            "id":"8",
-            "question":"Wieviel kb (kilobyte) sind 1 MB? (megabyte)",
-            "answers":["1024","2048","612","5000"]
-        },
-        {
-            "id":"9",
-            "question":"Was bedeutet PDF?",
-            "answers":["Partei des Friedens","Port Document Form","Portable Data Format","Portable Document Format"]
-        },
-        {
-            "id":"10",
-            "question":"Was ist ein Modem?",
-            "answers":["ein Datenwandler","ein Gleichrichter","ein Umspanner","ein Temperaturregler"]
-        },
-        {
-            "id":"11",
-            "question":"Von wem war der erste Computer?",
-            "answers":["Conrad Zuse","Steve Jobs","Mark Zuckerberg","Bill Gates"]
-        }
-    ]
+  "name": "Computer",
+  "description": "Dies ist ein Quiz über unterschiedliche Bereiche der EDV.",
+  "time": "5",
+  "questions": [
+    {
+      "id": "1",
+      "question": "Wofür steht VPN?",
+      "answers": [
+        "Visual Phone Network",
+        "Virtual Private Network",
+        "Virtual Public Network",
+        "Visual Pro Network"
+      ]
+    },
+    {
+      "id": "2",
+      "question": "Was bedeutet Copyright?",
+      "answers": [
+        "Kopierrecht",
+        "Vervielfältigungsrecht",
+        "Haftungsausschluss",
+        "Urheberrecht"
+      ]
+    },
+    {
+      "id": "3",
+      "question": "Wofür steht die Abkürzung USB?",
+      "answers": [
+        "Universal Satellite Bus",
+        "Universal Serial Bus",
+        "Universal System Bus",
+        "Universal Software Bus"
+      ]
+    },
+    {
+      "id": "4",
+      "question": "Wie hieß der erste Mikroprozessor?",
+      "answers": ["Apple 44", "Intel 404", "Pentium 1", "Intel 4004"]
+    },
+    {
+      "id": "5",
+      "question": "Welcher Fehlercode erscheint bei einer nicht gefundenen Internetseite?",
+      "answers": ["202", "404", "303", "505"]
+    },
+    {
+      "id": "6",
+      "question": "Was gibt genau den Ort einer Datei an?",
+      "answers": ["Weg", "Strecke", "Pfad", "Straße"]
+    },
+    {
+      "id": "7",
+      "question": "Welches dieser Begriffe ist ein Betriebssystem?",
+      "answers": ["Photoshop", "Windows", "Excel", "Netscape Navigator"]
+    },
+    {
+      "id": "8",
+      "question": "Wieviel kb (kilobyte) sind 1 MB? (megabyte)",
+      "answers": ["1024", "2048", "612", "5000"]
+    },
+    {
+      "id": "9",
+      "question": "Was bedeutet PDF?",
+      "answers": [
+        "Partei des Friedens",
+        "Port Document Form",
+        "Portable Data Format",
+        "Portable Document Format"
+      ]
+    },
+    {
+      "id": "10",
+      "question": "Was ist ein Modem?",
+      "answers": [
+        "ein Datenwandler",
+        "ein Gleichrichter",
+        "ein Umspanner",
+        "ein Temperaturregler"
+      ]
+    }
+  ]
 }
-
-
-

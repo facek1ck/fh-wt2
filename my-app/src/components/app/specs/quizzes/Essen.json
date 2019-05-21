@@ -1,0 +1,62 @@
+{
+  "name": "Essen",
+  "description": "Dies ist ein Quiz über Essen unterschiedlichster Art.",
+  "time": "5",
+  "questions": [
+    {
+      "id": "1",
+      "question": "In vielen Lebensmitteln steckt Ascorbinsäure. Was war das doch gleich?",
+      "answers": ["Vitamin A", "Vitamin D", "Vitamin B", "Vitamin C"]
+    },
+    {
+      "id": "2",
+      "question": "Wie viel Prozent Vollkorn muss ein Vollkornbrot enthalten, damit es sich überhaupt so nennen darf?",
+      "answers": ["90", "70", "80", "60"]
+    },
+    {
+      "id": "3",
+      "question": "Sie möchten vermeiden, Eier von Legebatteriehennen zu kaufen. Welche Ziffer auf dem Ei steht für Käfighaltung?",
+      "answers": ["2", "1", "3", "4"]
+    },
+    {
+      "id": "4",
+      "question": "Welchen der folgenden E-Nummern gibt es nicht?",
+      "answers": ["E 640", "E 633", "E 605", "E 621"]
+    },
+    {
+      "id": "5",
+      "question": "Bei Bio-Lebensmitteln sind weitaus weniger Zusatzstoffe erlaubt. Wie viele sind es Ihrer Meinung nach?",
+      "answers": ["ca. 20", "ca. 50", "ca. 80", "ca. 100"]
+    },
+    {
+      "id": "6",
+      "question": "Bliny sind die russische Version von ... ?",
+      "answers": ["Palatschinken", "Fleischbällchen", "Knödel", "Spaghetti"]
+    },
+    {
+      "id": "7",
+      "question": "In welcher Region haben Falafel ihren Ursprung?",
+      "answers": [
+        "Amerikanische Küche",
+        "Europäische Küche",
+        "Chinesische Küche",
+        "Arabische Küche"
+      ]
+    },
+    {
+      "id": "8",
+      "question": "Wie werden die Eier für Eggs Benedict zubereitet?",
+      "answers": ["gekocht", "sunny side up", "scrambled", "porchiert"]
+    },
+    {
+      "id": "9",
+      "question": "Was ist die Hauptzutat von Guacamole?",
+      "answers": ["Milch", "Avocado", "Banane", "Rindfleisch"]
+    },
+    {
+      "id": "10",
+      "question": "Wie hoch ist der Wassergehalt in Champignons?",
+      "answers": ["55", "61", "91", "31"]
+    }
+  ]
+}

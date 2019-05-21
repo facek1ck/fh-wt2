@@ -1,55 +1,55 @@
 {
   "name": "Computer",
-  "userid": "4",
+  "userid": "1",
   "answers": [
     {
       "id": "1",
-      "choice": 3,
-      "correct": false
+      "choice": 1,
+      "correct": true
     },
     {
       "id": "2",
-      "choice": -1,
-      "correct": false
+      "choice": 3,
+      "correct": true
     },
     {
       "id": "3",
-      "choice": -1,
-      "correct": false
+      "choice": 1,
+      "correct": true
     },
     {
       "id": "4",
-      "choice": -1,
+      "choice": 2,
       "correct": false
     },
     {
       "id": "5",
-      "choice": -1,
-      "correct": false
+      "choice": 1,
+      "correct": true
     },
     {
       "id": "6",
-      "choice": -1,
-      "correct": false
+      "choice": 2,
+      "correct": true
     },
     {
       "id": "7",
-      "choice": -1,
-      "correct": false
+      "choice": 1,
+      "correct": true
     },
     {
       "id": "8",
-      "choice": -1,
-      "correct": false
+      "choice": 0,
+      "correct": true
     },
     {
       "id": "9",
-      "choice": -1,
+      "choice": 0,
       "correct": false
     },
     {
       "id": "10",
-      "choice": -1,
+      "choice": 1,
       "correct": false
     }
   ]

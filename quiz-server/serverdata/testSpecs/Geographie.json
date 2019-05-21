@@ -1,59 +1,72 @@
 {
-    "name":"Geographie",
-    "description":"Dies ist ein Quiz über geografische Fragen wie z.B. Hauptstädte.",
-    "questions":[
+    "name": "Geographie",
+    "description": "Dies ist ein Quiz über geografische Fragen wie z.B. Hauptstädte.",
+    "time": "4",
+    "questions": [
         {
-            "id":"1",
-            "question":"Welche Stadt ist die Hauptstadt von Weißrussland?",
-            "answers":["Berlin","Moskau","Tschernobyl","Minsk"]
+            "id": "1",
+            "question": "Welche Stadt ist die Hauptstadt von Weißrussland?",
+            "answers": ["Berlin", "Moskau", "Tschernobyl", "Minsk"]
         },
         {
-            "id":"2",
-            "question":"Welcher Fluss fließt durch Brasilien?",
-            "answers":["Blanco","Uruguai","Teno","San Martin"]
+            "id": "2",
+            "question": "Welcher Fluss fließt durch Brasilien?",
+            "answers": ["Blanco", "Uruguai", "Teno", "San Martin"]
         },
         {
-            "id":"3",
-            "question":"Welcher Kontinent ist der Größte?",
-            "answers":["Asien","Europa","Australien","Afrika"]
+            "id": "3",
+            "question": "Welcher Kontinent ist der Größte?",
+            "answers": ["Asien", "Europa", "Australien", "Afrika"]
         },
         {
-            "id":"4",
-            "question":"Welche Wüste gilt als die trockenste der Erde?",
-            "answers":["Atacama-Wüste","Namib-Wüste","Kalahari","Karakum"]
+            "id": "4",
+            "question": "Welche Wüste gilt als die trockenste der Erde?",
+            "answers": ["Atacama-Wüste", "Namib-Wüste", "Kalahari", "Karakum"]
         },
         {
-            "id":"5",
-            "question":"Welcher Form hat die Stadt Brasilia von oben gesehen? Die von...",
-            "answers":["einem Baum","einem Flugzeug","einem Herz","einem Schiff"]
+            "id": "5",
+            "question": "Welcher Form hat die Stadt Brasilia von oben gesehen? Die von...",
+            "answers": [
+                "einem Baum",
+                "einem Flugzeug",
+                "einem Herz",
+                "einem Schiff"
+            ]
         },
         {
-            "id":"6",
-            "question":"Wie viele Menschen leben in China?",
-            "answers":["ca. 120 Mio.","ca. 500 Mio.","ca. 3,8 Mrd.","ca. 1,3 Mrd."]
+            "id": "6",
+            "question": "Wie viele Menschen leben in China?",
+            "answers": [
+                "ca. 120 Mio.",
+                "ca. 500 Mio.",
+                "ca. 3,8 Mrd.",
+                "ca. 1,3 Mrd."
+            ]
         },
         {
-            "id":"7",
-            "question":"Wie wird die Ostsee auch genannt?",
-            "answers":["Schwarzes Meer","Mittelmeer","Karibisches Meer","Baltisches Meer"]
+            "id": "7",
+            "question": "Wie wird die Ostsee auch genannt?",
+            "answers": [
+                "Schwarzes Meer",
+                "Mittelmeer",
+                "Karibisches Meer",
+                "Baltisches Meer"
+            ]
         },
         {
-            "id":"8",
-            "question":"Wie viel Prozent der Erdoberfläche nimmt der Kontinent Afrika ein?",
-            "answers":["7,5%","5,9%","10,2%","2,3%"]
+            "id": "8",
+            "question": "Wie viel Prozent der Erdoberfläche nimmt der Kontinent Afrika ein?",
+            "answers": ["7,5%", "5,9%", "10,2%", "2,3%"]
         },
         {
-            "id":"9",
-            "question":"Wie heißt die Hauptstadt des US-Bundesstaates Texas?",
-            "answers":["Richmond","Dallas","Austin","Denver"]
+            "id": "9",
+            "question": "Wie heißt die Hauptstadt des US-Bundesstaates Texas?",
+            "answers": ["Richmond", "Dallas", "Austin", "Denver"]
         },
         {
-            "id":"10",
-            "question":"Wie heißt der höchste Berg der Welt?",
-            "answers":["Kilimandscharo","K2","Mauna Kea","Mount Everest"]
+            "id": "10",
+            "question": "Wie heißt der höchste Berg der Welt?",
+            "answers": ["Kilimandscharo", "K2", "Mauna Kea", "Mount Everest"]
         }
     ]
 }
-
-
-

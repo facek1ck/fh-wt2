@@ -13,7 +13,7 @@ const AnswerOption = props => {
 
     <div className="answer-option">
       <Radio
-        id="answer-button"
+        className="answer-button"
         size="large"
         type="primary"
         id={props.answerType}

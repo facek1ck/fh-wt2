@@ -110,7 +110,7 @@ export default class OnlineLogIn extends React.Component {
 
       console.log("Received values of form: ", values);
 
-      axios.get("http://localhost:3000/users").then(response => {
+      axios.get("http://gabriels-macbook.local:3000/users").then(response => {
         console.log(response);
         var success;
         response.data.forEach(element => {

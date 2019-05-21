@@ -140,19 +140,23 @@ app.post(
 )
 
 const getResultScore = (userId, testName) => {
-    return new Promise((res, rej) => {
+    return new Promise(res => {
         fs.readdir('serverdata/testResults', (err, fileNames) => {
             const validFile = fileNames
                 .map(x => jsonfile.readFileSync('serverdata/testResults/' + x))
                 .find(f => f.userid === userId && f.name === testName)
 
+            if (!validFile) {
+                res({ name: testName, score: 0 })
+                return
+            }
             const score = validFile.answers.reduce((acc, curr) => {
                 if (curr.correct) {
                     acc += 1
                 }
                 return acc
             }, 0)
-            res({ score })
+            res({ name: testName, score })
         })
     })
 }
