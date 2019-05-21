@@ -125,45 +125,57 @@ export default class QuizApp extends Component {
       <Result
         quizResult={this.state.allQuestions}
         answers={this.state.selectedAnswers}
+        handleClick={this.props.handleClick}
       />
     );
   }
 
   viewreults(e) {
     e.preventDefault();
-    let resultfile = function(name, uid, answers) {
-      this.name = name;
-      this.userid = uid;
-      this.answers = answers;
-    };
-    let answers = this.state.selectedAnswers;
-    for (let i = 0; i < answers.length; i++) {
-      if (answers[i] == 0) {
-        answers[i] = { id: `${i + 1}`, choice: -1 };
-      } else {
-        answers[i] = { id: `${i + 1}`, choice: answers[i].choice };
+      let resultfile = function(name, uid, answers) {
+        this.name = name;
+        this.userid = uid;
+        this.answers = answers;
+      };
+      let answers = this.state.selectedAnswers;
+      for (let i = 0; i < answers.length; i++) {
+        if (answers[i] == 0) {
+          answers[i] = { id: `${i + 1}`, choice: -1 };
+        } else {
+          answers[i] = { id: `${i + 1}`, choice: answers[i].choice };
+        }
       }
+      let results = new resultfile(
+        this.props.store.quiz.name,
+        this.props.store.user.id,
+        answers
+      );
+      let resultsj = JSON.stringify(results, null, 2);
+      const blob = new Blob([resultsj], {
+        type: "application/json"
+      });
+      const data = new FormData();
+      data.append("55CHbmatnFYH6UYy", blob);
+      console.log(resultsj);
+      if(this.props.store.online){
+        //online
+        axios({
+          method: "post",
+          url:
+            "http://gabriels-macbook.local:3000/tests/" +
+            this.props.store.quiz.name +
+            "/upload",
+          data: data
+        });
+      }
+     else {
+       //offline
+       this.props.store.user.taken.push(this.props.store.quiz.name);
+      let tmp = require('../app/specs/Users/user-list.json');
+      tmp[this.props.store.user.id-1].taken = this.props.store.user.taken;
+      this.props.store.newUList = tmp;
+      this.props.store.result = results;
     }
-    let results = new resultfile(
-      this.props.store.quiz.name,
-      this.props.store.user.id,
-      answers
-    );
-    results = JSON.stringify(results, null, 2);
-    const blob = new Blob([results], {
-      type: "application/json"
-    });
-    const data = new FormData();
-    data.append("55CHbmatnFYH6UYy", blob);
-    console.log(results);
-    axios({
-      method: "post",
-      url:
-        "http://gabriels-macbook.local:3000/tests/" +
-        this.props.store.quiz.name +
-        "/upload",
-      data: data
-    });
     this.setState({ result: true });
   }
 
