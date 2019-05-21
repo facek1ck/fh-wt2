@@ -9,6 +9,7 @@ import { Form, Button, Icon } from "antd";
 import NavBar from "../nav-bar/nav-bar";
 import TestList from "../test-list/test-list";
 import Dashboard from "../dashboard/dashboard";
+import Home from "../home/home";
 
 const store = new StoreClass();
 
@@ -77,6 +78,11 @@ class App extends Component {
             )}
             {this.state.view == "quiz" ? (
               <QuizApp handleClick={this.handleClick} />
+            ) : (
+              undefined
+            )}
+            {this.state.view == "home" ? (
+              <Home handleClick={this.handleClick} />
             ) : (
               undefined
             )}
