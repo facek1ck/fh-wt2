@@ -6,7 +6,7 @@ import {inject} from 'mobx-react';
 
 const openNotificationWithIcon = type => {
   notification[type]({
-    message: 'Notification Title',
+    message: 'Eingabefehler!',
     description:
       'Name oder ID ist Falsch!',
   });
