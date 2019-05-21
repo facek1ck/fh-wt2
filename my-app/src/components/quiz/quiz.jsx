@@ -4,6 +4,10 @@ import Quiz from './quiz-components/quiz-component';
 import Result from './quiz-components/result';
 import './quiz.less';
 import { inject } from 'mobx-react';
+import axios from 'axios';
+
+
+
 
 
 @inject("store")
@@ -19,7 +23,7 @@ export default class QuizApp extends Component {
             answerOptions: [],
             allQuestions : [],
             answer: '',
-            selectedAnswers : {},
+            selectedAnswers : [],
             result: ''
         };
         this.setNextQuestion = this.setNextQuestion.bind(this);
@@ -31,22 +35,26 @@ export default class QuizApp extends Component {
     handleAnswerSelected(e) {
         var _self = this;
         var obj = _self.state.selectedAnswers;
-        var index = parseInt(e.target.value);
-        console.log("for selected question number " + (_self.state.counter + 1) +  " answer is " + index + " selected");
-        var Qindex = (_self.state.counter )
+        var selected = parseInt(e.target.value);
+        console.log("for selected question number " + (_self.state.counter + 1) +  " answer is " + selected + " selected");
+        var counter = (_self.state.counter )
         // create map and store all selecred answers with quiz Questions
-        obj[Qindex] = index;
+        obj[counter] = {id:counter, choice:selected}
         _self.setState({selectedAnswers : obj})
         console.log(obj);
     }
 
     componentWillMount() {
       let quizQuestions = this.props.store.quiz.questions;
-      console.log(quizQuestions[0].answers);
+      const fill = [];
+      for(let i=0; i<this.props.store.quiz.questions.length;i++){
+        fill[i]=0;
+      }
         this.setState({
           question: quizQuestions[0].question,
           answerOptions : quizQuestions[0].answers,
           allQuestions : quizQuestions,
+          selectedAnswers: fill
         });
       }
 
@@ -94,9 +102,6 @@ export default class QuizApp extends Component {
       }
 
       renderQuiz() {
-        // let question = this.props.store.quiz.questions[1];
-        // // console.log(question.question);
-        // // console.log(question.answers);
         return (
           <Quiz viewreults={this.viewreults}
             setNextQuestion={this.setNextQuestion}
@@ -108,6 +113,7 @@ export default class QuizApp extends Component {
             questionId={this.state.questionId}
             question={this.state.question}
             questionTotal={this.props.store.quiz.questions.length}
+            selectedAnswers={this.state.selectedAnswers}
             onAnswerSelected = {this.handleAnswerSelected}
           />
         );
@@ -121,6 +127,30 @@ export default class QuizApp extends Component {
 
       viewreults(e){
         e.preventDefault();
+        let resultfile = function (name,uid,answers){
+          this.name = name;
+          this.userid = uid;
+          this.answers = answers
+        }
+        let answers = this.state.selectedAnswers;
+        for(let i=0; i<answers.length;i++) {
+          if(answers[i] == 0){
+            answers[i] = {id:i+1,choice:"-1"}
+          } else {
+          answers[i] = {id:i+1, choice:answers[i].choice}}
+        }
+        let results = new resultfile(this.props.store.quiz.name,this.props.store.user.id,answers);
+        results = JSON.stringify(results, null, 2);
+        const blob = new Blob([results], {
+          type: 'application/json'
+        });
+        const data = new FormData();
+        data.append("55CHbmatnFYH6UYy", blob);
+        axios({
+          method: 'post',
+          url: 'http://gabriels-macbook.local:3000/tests/'+this.props.store.quiz+'/upload',
+          data: data,
+        })
         this.setState({result : true})
       }
 

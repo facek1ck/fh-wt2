@@ -18,6 +18,8 @@ const Quiz = (props) => {
           questionId={props.questionId}
           selectedAnswer={props.selectedAnswer}
           onAnswerSelected={props.onAnswerSelected}
+          selectedAnswers={props.selectedAnswers}
+          counter={props.counter}
           />
         );
       }
@@ -37,7 +39,8 @@ const Quiz = (props) => {
             {props.counter < (props.questionTotal-1) ? (<Button className="next-btn" onClick={props.setNextQuestion} >Next</Button>) : undefined}
             <br>
             </br>
-            {props.counter < (props.questionTotal-1) ? undefined:(<Button className="next-btn" href="" onClick={props.viewreults}>Abgeben</Button>)}
+            {props.counter == (props.questionTotal-1) && (props.selectedAnswers.length == (props.questionTotal)) ? (<Button className="next-btn" href="" onClick={props.viewreults}>Abgeben</Button>):undefined}
+            {/* {props.counter == (props.questionTotal-1) && !(props.selectedAnswers.length == (props.questionTotal)) ? <p>Bitte alle Fragen beantworten.</p>:undefined} */}
         </div>
         </div>
     );

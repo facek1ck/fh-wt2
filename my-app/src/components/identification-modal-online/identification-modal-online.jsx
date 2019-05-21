@@ -87,6 +87,7 @@ const openNotificationWithIcon = type => {
         'Content-Type': 'application/json'
       }
       axios.post('http://gabriels-macbook.local:3000/requests/heartbeat',{
+      //axios.post('http://192.168.0.185:3000/requests/heartbeat',{
           lastName: this.props.store.user.lastName,
           online: true
       },{headers:headers})

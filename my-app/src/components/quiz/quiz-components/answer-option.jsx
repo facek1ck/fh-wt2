@@ -19,6 +19,7 @@ const AnswerOption = (props) => {
                 value={props.index}
                 className={(props.selectedAnswer === props.index) ? 'selected-btn' : '' }
                 onClick={props.onAnswerSelected}
+                checked={props.selectedAnswers[props.counter].choice!==undefined?props.selectedAnswers[props.counter].choice==props.index:false}
             >
                 {props.answerContent}
             </Radio>
