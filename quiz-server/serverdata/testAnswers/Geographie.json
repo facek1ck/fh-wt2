@@ -1,0 +1,85 @@
+{
+  "name": "Geographie",
+  "answers": [
+    {
+      "id": "1",
+      "correct": 3,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    },
+    {
+      "id": "2",
+      "correct": 1,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    },
+    {
+      "id": "3",
+      "correct": 0,
+      "results": {
+        "correct": 1,
+        "false": 0
+      }
+    },
+    {
+      "id": "4",
+      "correct": 0,
+      "results": {
+        "correct": 1,
+        "false": 0
+      }
+    },
+    {
+      "id": "5",
+      "correct": 1,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    },
+    {
+      "id": "6",
+      "correct": 3,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    },
+    {
+      "id": "7",
+      "correct": 3,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    },
+    {
+      "id": "8",
+      "correct": 1,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    },
+    {
+      "id": "9",
+      "correct": 2,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    },
+    {
+      "id": "10",
+      "correct": 3,
+      "results": {
+        "correct": 0,
+        "false": 1
+      }
+    }
+  ]
+}
