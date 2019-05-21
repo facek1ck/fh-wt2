@@ -10,7 +10,10 @@
     ],
     "taken": [
       "Computer",
-      "Geographie"
+      "Geographie",
+      "Geographie",
+      "Essen",
+      "Essen"
     ]
   },
   {
@@ -51,7 +54,9 @@
       "Filme"
     ],
     "taken": [
-      "Computer"
+      "Computer",
+      "Geographie",
+      "Geographie"
     ]
   },
   {
@@ -64,7 +69,9 @@
       "Filme"
     ],
     "taken": [
-      "Filme"
+      "Filme",
+      "Computer",
+      "Essen"
     ]
   }
 ]

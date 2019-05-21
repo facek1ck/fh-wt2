@@ -25,11 +25,7 @@ const Quiz = props => {
 
   return (
     <div key={props.questionId} className="quiz-story">
-      <QuestionCount
-        counter={props.counter}
-        viewreults={props.viewreults}
-        total={props.questionTotal}
-      />
+      <QuestionCount counter={props.counter} total={props.questionTotal} />
       <Question content={props.question} />
       <ul className="answerOptions">
         {props.answerOptions.map(renderAnswerOptions)}
@@ -53,7 +49,7 @@ const Quiz = props => {
         <br />
         {props.counter == props.questionTotal - 1 &&
         props.selectedAnswers.length == props.questionTotal ? (
-          <Button className="next-btn" href="" onClick={props.viewreults}>
+          <Button className="next-btn" href="" onClick={props.viewresults}>
             Abgeben
           </Button>
         ) : (

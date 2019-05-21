@@ -19,11 +19,13 @@ export default class Dashboard extends Component {
       questions: [],
       online: 0
     };
+
+    this.interval = null;
   }
 
   componentDidMount() {
     this.checkOnline();
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.checkOnline();
     }, 5000);
 
@@ -56,6 +58,12 @@ export default class Dashboard extends Component {
               });
             });
         });
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.interval) {
+      clearInterval(this.interval);
     }
   }
 

@@ -1,59 +1,67 @@
 {
-    "name":"Geographie",
-    "description":"Dies ist ein Quiz über unterschiedliche Bereiche der EDV.",
-    "questions":[
-        {
-            "id":"1",
-            "question":"Wofür steht VPN?",
-            "answers":["Visual Phone Network","Virtual Private Network","Virtual Public Network","Visual Pro Network"]
-        },
-        {
-            "id":"2",
-            "question":"Was bedeutet Copyright?",
-            "answers":["Kopierrecht","Vervielfältigungsrecht","Haftungsausschluss","Urheberrecht"]
-        },
-        {
-            "id":"3",
-            "question":"Wofür steht die Abkürzung USB?",
-            "answers":["Universal Satellite Bus","Universal Serial Bus","Universal System Bus","Universal Software Bus"]
-        },
-        {
-            "id":"4",
-            "question":"Wie hieß der erste Mikroprozessor?",
-            "answers":["Apple 44","Intel 404","Pentium 1","Intel 4004"]
-        },
-        {
-            "id":"5",
-            "question":"Welcher Fehlercode erscheint bei einer nicht gefundenen Internetseite?",
-            "answers":["202","404","303","505"]
-        },
-        {
-            "id":"6",
-            "question":"Was gibt genau den Ort einer Datei an?",
-            "answers":["Weg","Strecke","Pfad","Straße"]
-        },
-        {
-            "id":"7",
-            "question":"Welches dieser Begriffe ist ein Betriebssystem?",
-            "answers":["Photoshop","Windows","Excel","Netscape Navigator"]
-        },
-        {
-            "id":"8",
-            "question":"Wieviel kb (kilobyte) sind 1 MB? (megabyte)",
-            "answers":["1024","2048","612","5000"]
-        },
-        {
-            "id":"9",
-            "question":"Was bedeutet PDF?",
-            "answers":["Partei des Friedens","Port Document Form","Portable Data Format","Portable Document Format"]
-        },
-        {
-            "id":"10",
-            "question":"Was ist ein Modem?",
-            "answers":["ein Datenwandler","ein Gleichrichter","ein Umspanner","ein Temperaturregler"]
-        }
-    ]
+  "name": "Geographie",
+  "description": "Dies ist ein Quiz über geografische Fragen wie z.B. Hauptstädte.",
+  "time": "4",
+  "questions": [
+    {
+      "id": "1",
+      "question": "Welche Stadt ist die Hauptstadt von Weißrussland?",
+      "answers": ["Berlin", "Moskau", "Tschernobyl", "Minsk"]
+    },
+    {
+      "id": "2",
+      "question": "Welcher Fluss fließt durch Brasilien?",
+      "answers": ["Blanco", "Uruguai", "Teno", "San Martin"]
+    },
+    {
+      "id": "3",
+      "question": "Welcher Kontinent ist der Größte?",
+      "answers": ["Asien", "Europa", "Australien", "Afrika"]
+    },
+    {
+      "id": "4",
+      "question": "Welche Wüste gilt als die trockenste der Erde?",
+      "answers": ["Atacama-Wüste", "Namib-Wüste", "Kalahari", "Karakum"]
+    },
+    {
+      "id": "5",
+      "question": "Welcher Form hat die Stadt Brasilia von oben gesehen? Die von...",
+      "answers": ["einem Baum", "einem Flugzeug", "einem Herz", "einem Schiff"]
+    },
+    {
+      "id": "6",
+      "question": "Wie viele Menschen leben in China?",
+      "answers": [
+        "ca. 120 Mio.",
+        "ca. 500 Mio.",
+        "ca. 3,8 Mrd.",
+        "ca. 1,3 Mrd."
+      ]
+    },
+    {
+      "id": "7",
+      "question": "Wie wird die Ostsee auch genannt?",
+      "answers": [
+        "Schwarzes Meer",
+        "Mittelmeer",
+        "Karibisches Meer",
+        "Baltisches Meer"
+      ]
+    },
+    {
+      "id": "8",
+      "question": "Wie viel Prozent der Erdoberfläche nimmt der Kontinent Afrika ein?",
+      "answers": ["7,5%", "5,9%", "10,2%", "2,3%"]
+    },
+    {
+      "id": "9",
+      "question": "Wie heißt die Hauptstadt des US-Bundesstaates Texas?",
+      "answers": ["Richmond", "Dallas", "Austin", "Denver"]
+    },
+    {
+      "id": "10",
+      "question": "Wie heißt der höchste Berg der Welt?",
+      "answers": ["Kilimandscharo", "K2", "Mauna Kea", "Mount Everest"]
+    }
+  ]
 }
-
-
-

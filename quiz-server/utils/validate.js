@@ -3,7 +3,8 @@ const fs = require('fs')
 
 const validate = (userFileName, testName, userId) => {
     let path = 'serverdata/testAnswers/' + testName + '.json'
-    let correct = jsonfile.readFileSync(path)
+    let correct = JSON.parse(fs.readFileSync(path))
+
     let userResultFile = jsonfile.readFileSync(
         'serverdata/testResults/' + userFileName
     )
