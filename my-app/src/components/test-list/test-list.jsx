@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Avatar, Button } from 'antd';
 import { observer, inject } from 'mobx-react';
-import './test-list.less';
+import {} from './test-list.less';
 import axios from 'axios';
 import files from '../app/specs/quizzes/*.json';
 

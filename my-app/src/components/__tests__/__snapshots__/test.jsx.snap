@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Exam components test question rendered 1`] = `ShallowWrapper {}`;
+
+exports[`Exam components test questioncounter rendered 1`] = `ShallowWrapper {}`;
+
+exports[`Render Tests AUTH FORM renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Render Tests SELECT BUTTON renders correctly 1`] = `ShallowWrapper {}`;
