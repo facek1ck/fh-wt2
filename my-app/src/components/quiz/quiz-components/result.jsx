@@ -49,10 +49,10 @@ class Result extends React.Component {
         <div>
           <strong>Lets see your results</strong>!
           <div>{this.renderQuestins()}</div>
-          <Button onClick={() => this.showdownload()}>Erstelle dein Ergebnis!</Button>
+          {!this.props.store.online?<Button onClick={() => this.showdownload()}>Erstelle dein Ergebnis!</Button>:undefined}
           <a id="a" style={{display:"none"}}></a>
           <a id="b" style={{display:"none"}}></a>
-          <div id="container" style={{display:"none"}}><Button onClick={() => this.promptUpdate()}>Weiter</Button></div>
+          {this.props.store.online?<div id="container"><Button onClick={() => this.promptUpdate()}>Weiter</Button></div>:<div id="container" style={{display:"none"}}><Button onClick={() => this.promptUpdate()}>Weiter</Button></div>}
         </div>
       </div>
     );
@@ -68,9 +68,13 @@ class Result extends React.Component {
   }
 
   promptUpdate(){
+    if(this.props.store.online){
+      this.props.handleClick("tests");
+    } else {
     console.log(this.props.store.result)
     setTimeout(this.props.handleClick,6100,"tests");
     openNotification(this.props.store.newUList);
+  }
   }
 }
 
