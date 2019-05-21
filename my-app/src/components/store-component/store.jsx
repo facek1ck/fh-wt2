@@ -1,10 +1,9 @@
-import {observable, decorate} from 'mobx';
+import { observable, decorate } from "mobx";
 
 export default class StoreClass {
-   @observable user;
-   @observable counter;
-   @observable viewState = "login";
-   @observable online = false;
-   @observable quiz;
+  @observable user;
+  @observable counter;
+  @observable viewState = "login";
+  @observable online;
+  @observable quiz;
 }
-

@@ -103,7 +103,8 @@ export default class QuizApp extends Component {
 
       renderQuiz() {
         return (
-          <Quiz viewreults={this.viewreults}
+          <Quiz 
+            viewreults={this.viewreults}
             setNextQuestion={this.setNextQuestion}
             counter={this.state.counter}
             setPreviousQuestion={this.setPreviousQuestion}
