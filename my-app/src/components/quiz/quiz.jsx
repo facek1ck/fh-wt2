@@ -212,7 +212,7 @@ export default class QuizApp extends Component {
           <div className="Quiz-header">
             <h2>Quiz Assignment :</h2>
           </div>
-          <div>
+          <div className="coutdown">
             {this.state.result ? null : (
               <Countdown
                 date={this.startTime + this.props.store.quiz.time * 60000}

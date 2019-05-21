@@ -94,10 +94,10 @@ export default class TestList extends Component {
       if (disabled) {
         const result = this.state.results.find(r => r.name === test.name);
         if (result) {
-          score = ` (${result.score}/${test.questions.length})`;
+          score = `Bereits abgeschlossen (${result.score}/${test.questions.length})`;
         }
       }
-      const name = `${test.name}${score}`;
+     const name = `${score}`;
       return (
         <Card
           key={test.name}
@@ -111,7 +111,7 @@ export default class TestList extends Component {
               Take Test
             </Button>
           }
-          title={name}
+          title={test.name}
         >
           <Meta
             avatar={
@@ -121,6 +121,9 @@ export default class TestList extends Component {
             }
             description={test.description}
           />
+          <div className="score">
+            {name}
+          </div>
         </Card>
       );
     });
