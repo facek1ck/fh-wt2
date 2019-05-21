@@ -49,7 +49,7 @@ class Result extends React.Component {
         <div>
           <strong>Lets see your results</strong>!
           <div>{this.renderQuestins()}</div>
-          {!this.props.store.online?<Button onClick={() => this.showdownload()}>Erstelle dein Ergebnis!</Button>:undefined}
+          {!this.props.store.online?<Button type="primary" onClick={() => this.showdownload()}>Erstelle dein Ergebnis!</Button>:undefined}
           <a id="a" style={{display:"none"}}></a>
           <a id="b" style={{display:"none"}}></a>
           {this.props.store.online?<div id="container"><Button onClick={() => this.promptUpdate()}>Weiter</Button></div>:<div id="container" style={{display:"none"}}><Button onClick={() => this.promptUpdate()}>Weiter</Button></div>}

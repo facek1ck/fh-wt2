@@ -35,6 +35,7 @@ const Quiz = props => {
         {props.answerOptions.map(renderAnswerOptions)}
       </ul>
       <div className="bottom-footer">
+        <div>
         {props.counter > 0 ? (
           <Button className="Previous-btn" onClick={props.setPreviousQuestion}>
             Previous
@@ -42,7 +43,9 @@ const Quiz = props => {
         ) : (
           <div />
         )}
+        </div>
 
+        <div>
         {props.counter < props.questionTotal - 1 ? (
           <Button className="next-btn" onClick={props.setNextQuestion}>
             Next
@@ -50,7 +53,6 @@ const Quiz = props => {
         ) : (
           undefined
         )}
-        <br />
         {props.counter == props.questionTotal - 1 &&
         props.selectedAnswers.length == props.questionTotal ? (
           <Button className="next-btn" href="" onClick={props.viewreults}>
@@ -59,6 +61,7 @@ const Quiz = props => {
         ) : (
           undefined
         )}
+        </div>
         {/* {props.counter == (props.questionTotal-1) && !(props.selectedAnswers.length == (props.questionTotal)) ? <p>Bitte alle Fragen beantworten.</p>:undefined} */}
       </div>
     </div>
