@@ -25,7 +25,6 @@ Enzyme.configure({ adapter: new Adapter() });
 }); */
 
 
-
 describe('Render Tests', () => {
   test('AUTH FORM renders correctly', () => {
     const wrapper = shallow(<AuthForm />);
