@@ -111,7 +111,7 @@ const openNotificationWithIcon = type => {
         console.log('Received values of form: ', values);
         
         
-        axios.get('http://gabriels-macbook.local:3000/users').then(response => {
+        axios.get('http://localhost:3000/users').then(response => {
           console.log(response);
           var success;
         response.data.forEach(element => {
