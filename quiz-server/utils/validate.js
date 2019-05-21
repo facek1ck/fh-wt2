@@ -1,12 +1,18 @@
 const jsonfile = require('jsonfile')
 const fs = require('fs')
 
-const validate = (userFileName, testName) => {
+const validate = (userFileName, testName, userId) => {
     let path = 'serverdata/testAnswers/' + testName + '.json'
     let correct = jsonfile.readFileSync(path)
     let userResultFile = jsonfile.readFileSync(
         'serverdata/testResults/' + userFileName
     )
+    let userList = jsonfile.readFileSync('serverdata/userList.json')
+    for (i = 0; userList.length; i++) {
+        if (userList.id == userId) {
+            userList[i].taken.push(testName)
+        }
+    }
 
     correct.answers.forEach((ca, caIdx) => {
         const uaIdx = userResultFile.answers.findIndex(ans => ans.id === ca.id)
@@ -34,6 +40,11 @@ const validate = (userFileName, testName) => {
     fs.writeFile(
         'serverdata/testResults/' + userFileName,
         JSON.stringify(userResultFile, null, 2),
+        err => (err ? console.log(err) : null)
+    )
+    fs.writeFile(
+        'serverdata/userList.json',
+        JSON.stringify(userList, null, 2),
         err => (err ? console.log(err) : null)
     )
 }
