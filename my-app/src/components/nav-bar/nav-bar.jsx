@@ -17,7 +17,7 @@ class NavBar extends React.Component {
       };
       axios
         .post(
-          "http://localhost:3000/requests/heartbeat",
+          "http://gabriels-macbook.local:3000/requests/heartbeat",
           {
             lastName: this.props.store.user.lastName,
             online: false
@@ -62,7 +62,8 @@ class NavBar extends React.Component {
         </Menu.Item>
         <Menu.Item className="logout" key="logout">
           <Icon type="poweroff" className="logoutIcon" />
-          Logout ({this.props.store.user.firstName} {this.props.store.user.lastName})
+          Logout ({this.props.store.user.firstName}{" "}
+          {this.props.store.user.lastName})
         </Menu.Item>
       </Menu>
     );
