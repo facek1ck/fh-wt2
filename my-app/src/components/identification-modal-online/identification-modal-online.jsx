@@ -83,7 +83,7 @@ export default class OnlineLogIn extends React.Component {
     };
     axios
       .post(
-        "http://gabriels-macbook.local:3000/requests/heartbeat",
+        "http://localhost:3000/requests/heartbeat",
         {
           //axios.post('http://gabriels-macbook.local:3000/requests/heartbeat',{
           lastName: this.props.store.user.lastName,

@@ -5,6 +5,7 @@ import Result from "./quiz-components/result";
 import "./quiz.less";
 import { inject } from "mobx-react";
 import axios from "axios";
+import { Card } from "antd";
 
 @inject("store")
 export default class QuizApp extends Component {
@@ -184,11 +185,15 @@ export default class QuizApp extends Component {
   render() {
     return (
       <div className="Quiz">
-        <div className="Quiz-header">
-          <h2>Quiz Assignment :</h2>
-        </div>
+        <Card style={{width:750}} className="QuizCard">
+        
+          <div className="Quiz-header">
+            <h2>Quiz Assignment :</h2>
+          </div>
 
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+          {this.state.result ? this.renderResult() : this.renderQuiz()}
+        
+        </Card>
       </div>
     );
   }
