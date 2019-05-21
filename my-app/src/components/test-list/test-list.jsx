@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Card, Avatar, Button } from 'antd';
-import { observer, inject } from 'mobx-react';
-import {} from './test-list.less';
-import axios from 'axios';
-import files from '../app/specs/quizzes/*.json';
+import React, { Component } from "react";
+import { Card, Avatar, Button } from "antd";
+import { observer, inject } from "mobx-react";
+import "./test-list.less";
+import axios from "axios";
+import files from "../app/specs/quizzes/*.json";
 
 const { Meta } = Card;
 
@@ -94,10 +94,12 @@ export default class TestList extends Component {
       if (disabled) {
         const result = this.state.results.find(r => r.name === test.name);
         if (result) {
-          score = `Bereits abgeschlossen (${result.score}/${test.questions.length})`;
+          score = `Bereits abgeschlossen (${result.score}/${
+            test.questions.length
+          })`;
         }
       }
-     const name = `${score}`;
+      const name = `${score}`;
       return (
         <Card
           key={test.name}
@@ -121,9 +123,7 @@ export default class TestList extends Component {
             }
             description={test.description}
           />
-          <div className="score">
-            {name}
-          </div>
+          <div className="score">{name}</div>
         </Card>
       );
     });

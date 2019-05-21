@@ -7,10 +7,7 @@ import { Radio } from "antd";
 //     };
 
 const AnswerOption = props => {
-
-
   return (
-
     <div className="answer-option">
       <Radio
         className="answer-button"
@@ -21,8 +18,9 @@ const AnswerOption = props => {
         className={props.selectedAnswer === props.index ? "selected-btn" : ""}
         onClick={props.onAnswerSelected}
         checked={
-          props.selectedAnswers[props.counter].choice == undefined ? false :
-            props.selectedAnswers[props.counter].choice == props.index
+          props.selectedAnswers[props.counter].choice !== undefined
+            ? props.selectedAnswers[props.counter].choice == props.index
+            : false
         }
       >
         {props.answerContent}

@@ -64,3 +64,6 @@ typings/
 
 # LocalStore Files
 scratch/
+
+#TestResults
+testResults
