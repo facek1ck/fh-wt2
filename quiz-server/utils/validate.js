@@ -43,7 +43,6 @@ const validate = (userFileName, testName, userId) => {
         JSON.stringify(userResultFile, null, 2),
         err => (err ? console.log(err) : null)
     )
-
     fs.writeFile(
         'serverdata/userList.json',
         JSON.stringify(userList, null, 2),

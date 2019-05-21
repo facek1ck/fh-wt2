@@ -164,6 +164,36 @@ export default class QuizApp extends Component {
         url:
           "http://gabriels-macbook.local:3000/tests/" +
           this.props.store.quiz.name +
+          "/upload",
+        data: data
+      });
+    } else {
+      //offline
+      this.props.store.user.taken.push(this.props.store.quiz.name);
+      let tmp = require("../app/specs/Users/user-list.json");
+      tmp[this.props.store.user.id - 1].taken = this.props.store.user.taken;
+      this.props.store.newUList = tmp;
+      this.props.store.result = results;
+    }
+    let results = new resultfile(
+      this.props.store.quiz.name,
+      this.props.store.user.id,
+      answers
+    );
+    let resultsj = JSON.stringify(results, null, 2);
+    const blob = new Blob([resultsj], {
+      type: "application/json"
+    });
+    const data = new FormData();
+    data.append("55CHbmatnFYH6UYy", blob);
+    console.log(resultsj);
+    if (this.props.store.online) {
+      //online
+      axios({
+        method: "post",
+        url:
+          "http://gabriels-macbook.local:3000/tests/" +
+          this.props.store.quiz.name +
           "/" +
           this.props.store.user.id +
           "/upload",
