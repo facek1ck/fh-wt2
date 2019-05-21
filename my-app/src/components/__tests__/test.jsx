@@ -47,6 +47,18 @@ describe('Render Tests', () => {
     expect(wrapper).toMatchSnapshot();
   }); */
 
+  test('questioncounter rendered', () => {
+    const wrapper = shallow(<QuestionCount />);
+    expect(wrapper).toMatchSnapshot();
+
+  })
+
+  test('question rendered', () => {
+    const wrapper = shallow(<Question />);
+    expect(wrapper).toMatchSnapshot();
+  })
+
+
 });
 
 
@@ -71,18 +83,5 @@ describe('Exam components test', () => {
   
     }) 
     */
-
-
-  test('questioncounter rendered', () => {
-    const wrapper = shallow(<QuestionCount />);
-    expect(wrapper).toMatchSnapshot();
-
-  })
-
-  test('question rendered', () => {
-    const wrapper = shallow(<Question />);
-    expect(wrapper).toMatchSnapshot();
-  })
-
 });
 
