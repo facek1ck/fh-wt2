@@ -1,37 +1,70 @@
 [
-    {
-        "id":"1",
-        "firstName":"Gabriel",
-        "lastName":"Asherov",
-        "tests":["Computer","Geographie","Essen"],
-        "taken":["Computer"]
-    },
-    {
-        "id":"2",
-        "firstName":"Thomas",
-        "lastName":"Macek",
-        "tests":["Geographie","Filme"],
-        "taken":["Geographie"]
-    },
-    {
-        "id":"3",
-        "firstName":"Thomas",
-        "lastName":"Fankhauser",
-        "tests":["Computer","Geographie","Essen","Filme"],
-        "taken":["Essen","Filme"]
-    },
-    {
-        "id":"4",
-        "firstName":"Michael",
-        "lastName":"Weissenböck",
-        "tests":["Computer","Geographie","Essen","Filme"],
-        "taken":[]
-    },
-    {
-        "id":"5",
-        "firstName":"Gregor",
-        "lastName":"Holli",
-        "tests":["Computer","Essen","Filme"],
-        "taken":["Filme"]
-    }
+  {
+    "id": "1",
+    "firstName": "Gabriel",
+    "lastName": "Asherov",
+    "tests": [
+      "Computer",
+      "Geographie",
+      "Essen"
+    ],
+    "taken": [
+      "Computer",
+      "Geographie"
+    ]
+  },
+  {
+    "id": "2",
+    "firstName": "Thomas",
+    "lastName": "Macek",
+    "tests": [
+      "Geographie",
+      "Filme"
+    ],
+    "taken": [
+      "Geographie"
+    ]
+  },
+  {
+    "id": "3",
+    "firstName": "Thomas",
+    "lastName": "Fankhauser",
+    "tests": [
+      "Computer",
+      "Geographie",
+      "Essen",
+      "Filme"
+    ],
+    "taken": [
+      "Essen",
+      "Filme"
+    ]
+  },
+  {
+    "id": "4",
+    "firstName": "Michael",
+    "lastName": "Weissenböck",
+    "tests": [
+      "Computer",
+      "Geographie",
+      "Essen",
+      "Filme"
+    ],
+    "taken": [
+      "Computer"
+    ]
+  },
+  {
+    "id": "5",
+    "firstName": "Gregor",
+    "lastName": "Holli",
+    "tests": [
+      "Computer",
+      "Essen",
+      "Filme"
+    ],
+    "taken": [
+      "Filme"
+    ]
+  }
 ]

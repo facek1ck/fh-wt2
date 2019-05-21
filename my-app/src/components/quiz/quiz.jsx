@@ -125,6 +125,7 @@ export default class QuizApp extends Component {
       <Result
         quizResult={this.state.allQuestions}
         answers={this.state.selectedAnswers}
+        handleClick={this.props.handleClick}
       />
     );
   }
@@ -149,21 +150,34 @@ export default class QuizApp extends Component {
       this.props.store.user.id,
       answers
     );
-    results = JSON.stringify(results, null, 2);
-    const blob = new Blob([results], {
+    let resultsj = JSON.stringify(results, null, 2);
+    const blob = new Blob([resultsj], {
       type: "application/json"
     });
     const data = new FormData();
     data.append("55CHbmatnFYH6UYy", blob);
-    console.log(results);
-    axios({
-      method: "post",
-      url:
-        "http://gabriels-macbook.local:3000/tests/" +
-        this.props.store.quiz.name +
-        "/upload",
-      data: data
-    });
+    console.log(resultsj);
+    if (this.props.store.online) {
+      //online
+      axios({
+        method: "post",
+        url:
+          "http://gabriels-macbook.local:3000/tests/" +
+          this.props.store.quiz.name +
+          "/" +
+          this.props.store.user.id +
+          "/upload",
+        data: data
+      });
+      this.props.store.user.taken.push(this.props.store.quiz.name);
+    } else {
+      //offline
+      this.props.store.user.taken.push(this.props.store.quiz.name);
+      let tmp = require("../app/specs/Users/user-list.json");
+      tmp[this.props.store.user.id - 1].taken = this.props.store.user.taken;
+      this.props.store.newUList = tmp;
+      this.props.store.result = results;
+    }
     this.setState({ result: true });
   }
 
@@ -173,6 +187,7 @@ export default class QuizApp extends Component {
         <div className="Quiz-header">
           <h2>Quiz Assignment :</h2>
         </div>
+
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );

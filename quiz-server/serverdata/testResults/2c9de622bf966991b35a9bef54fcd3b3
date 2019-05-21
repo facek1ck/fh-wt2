@@ -1,55 +1,55 @@
 {
-  "name": "Geographie",
-  "userid": "1",
+  "name": "Computer",
+  "userid": "4",
   "answers": [
     {
       "id": "1",
-      "choice": 0,
+      "choice": 3,
       "correct": false
     },
     {
       "id": "2",
-      "choice": 0,
+      "choice": -1,
       "correct": false
     },
     {
       "id": "3",
-      "choice": 0,
-      "correct": true
+      "choice": -1,
+      "correct": false
     },
     {
       "id": "4",
-      "choice": 0,
-      "correct": true
+      "choice": -1,
+      "correct": false
     },
     {
       "id": "5",
-      "choice": 0,
+      "choice": -1,
       "correct": false
     },
     {
       "id": "6",
-      "choice": 0,
+      "choice": -1,
       "correct": false
     },
     {
       "id": "7",
-      "choice": 0,
+      "choice": -1,
       "correct": false
     },
     {
       "id": "8",
-      "choice": 0,
+      "choice": -1,
       "correct": false
     },
     {
       "id": "9",
-      "choice": 0,
+      "choice": -1,
       "correct": false
     },
     {
       "id": "10",
-      "choice": 0,
+      "choice": -1,
       "correct": false
     }
   ]

@@ -59,6 +59,18 @@ export default class Dashboard extends Component {
     }
   }
 
+  downloadStats(name) {
+    axios.get(`http://gabriels-macbook.local:3000/stats/${name}`).then(res => {
+      var data =
+        "text/json;charset=utf-8," +
+        encodeURIComponent(JSON.stringify(res.data, null, 2));
+      var a = document.getElementById("a");
+      a.href = "data:" + data;
+      a.download = "result" + name + ".json";
+      a.click();
+    });
+  }
+
   checkOnline() {
     axios
       .get("http://gabriels-macbook.local:3000/requests/online")
@@ -108,13 +120,27 @@ export default class Dashboard extends Component {
               {options}
             </Select>
           </div>
+          <div className="download">
+            {this.state.selectedTest != "" ? (
+              <button
+                onClick={() => this.downloadStats(this.state.selectedTest)}
+              >
+                Download
+              </button>
+            ) : (
+              undefined
+            )}
+          </div>
           <div className="dashboard-online-counter">
             <Icon type="team" /> Online: {this.state.online}
           </div>
         </div>
         <Divider orientation="left">Question Statistics</Divider>
 
-        <div className="dashboard-statistics">{cards}</div>
+        <div className="dashboard-statistics">
+          {cards}
+          <a id="a" style={{ display: "none" }} />
+        </div>
       </div>
     );
   }

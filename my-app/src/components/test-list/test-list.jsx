@@ -9,80 +9,87 @@ const { Meta } = Card;
 
 @inject("store")
 export default class TestList extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            tests: []
-        }
+    this.state = {
+      tests: []
+    };
+  }
+
+  componentDidMount() {
+    this.getTests();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.store.online !== this.props.store.online) {
+      this.getTests();
     }
+  }
 
-    componentDidMount() {
-        this.getTests()
+  getTests() {
+    const { store } = this.props;
+    if (store.online) {
+      axios
+        .get(`http://gabriels-macbook.local:3000/users/${store.user.id}/tests`)
+        .then(response => {
+          console.log(response);
+          this.setState({
+            ...this.state,
+            tests: response.data
+          });
+        });
+    } else {
+      const tests = store.user.tests
+        // .filter(x => !store.user.taken.includes(x))
+        .filter(test => Object.keys(files).includes(test))
+        .map(test => files[test]);
+
+      this.setState({
+        ...this.state,
+        tests
+      });
     }
+  }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.store.online !== this.props.store.online) {
-            this.getTests()
-        }
-    }
+  redirectToTest(quiz) {
+    this.props.store.quiz = quiz;
+    console.log(this.props.store);
+    this.props.handleClick("quiz");
+  }
 
-    getTests() {
-        const { store } = this.props
-        if(store.online){
-            axios.get('http://localhost:3000/users/'+store.user.id+'/open').then(response => {
-                this.setState({
-                    ...this.state,
-                    tests: response.data
-                })
-            })
-        } else {
-            const tests = store.user.tests
-                .filter(x => !store.user.taken.includes(x))
-                .filter(test => Object.keys(files).includes(test))
-                .map(test => files[test])
-
-            this.setState({
-                ...this.state,
-                tests
-            })
-        }
-    }
-
-    redirectToTest(quiz){
-        this.props.store.quiz = quiz
-        console.log(this.props.store);
-        this.props.handleClick("quiz")
-    }
-
-    renderTests() {
-        return this.state.tests.map(test => 
-            <Card
-            key={test.name}
-            style={{ width: '60%', margin: '30px auto'}}
-            extra={
-                <Button type="primary" onClick={() => this.redirectToTest(test)}>
-                    Take Test
-                </Button>
+  renderTests() {
+    return this.state.tests.map(test => (
+      <Card
+        key={test.name}
+        style={{ width: "60%", margin: "30px auto" }}
+        extra={
+          <Button
+            type="primary"
+            onClick={() => this.redirectToTest(test)}
+            disabled={
+              this.props.store.user.taken.indexOf(test.name) > -1 ? true : false
             }
-            title={test.name} 
-        >
-            <Meta
-                avatar={
-                    <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>{test.name[0]}</Avatar>
-                }
-                description={test.description}
-            /> 
-        </Card>
-        );
-    }
-    render() {
-        const tests = this.renderTests()
+          >
+            Take Test
+          </Button>
+        }
+        title={test.name}
+      >
+        <Meta
+          avatar={
+            <Avatar style={{ color: "#f56a00", backgroundColor: "#fde3cf" }}>
+              {test.name[0]}
+            </Avatar>
+          }
+          description={test.description}
+        />
+      </Card>
+    ));
+  }
+  render() {
+    const tests = this.renderTests();
 
-        return(  
-            <div className="tests">
-            {tests}
-            </div> 
-        )
-    }
+    return <div className="tests">{tests}</div>;
+  }
 }

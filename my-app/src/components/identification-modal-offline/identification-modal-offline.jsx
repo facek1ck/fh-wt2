@@ -6,7 +6,7 @@ import {inject} from 'mobx-react';
 
 const openNotificationWithIcon = type => {
   notification[type]({
-    message: 'Notification Title',
+    message: 'Eingabefehler!',
     description:
       'Name oder ID ist Falsch!',
   });
@@ -86,6 +86,7 @@ const CollectionCreateForm = Form.create({ name: 'form_in_modal' })(
   
     handleOk = () => {
       this.setState({ visible: false});
+      this.props.store.online=false;
       this.props.handleClick("tests");
     }
 

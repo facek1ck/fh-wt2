@@ -52,6 +52,20 @@ app.get('/users/:id/open', (req, res) => {
     res.json(tests)
 })
 
+app.get('/users/:id/tests', (req, res) => {
+    let user = userList.filter(function(user) {
+        return user.id == req.params.id
+    })
+
+    let testNames = user[0].tests
+    let tests = []
+    testNames.forEach(element => {
+        let path = 'serverdata/testSpecs/' + element + '.JSON'
+        tests.push(jsonfile.readFileSync(path))
+    })
+    res.json(tests)
+})
+
 //GET a test by name
 app.get('/tests/:name', (req, res) => {
     let path = 'serverdata/testSpecs/' + req.params.name + '.JSON'
@@ -107,11 +121,11 @@ app.get('/requests/online', (req, res) => {
 })
 
 app.post(
-    '/tests/:name/upload',
+    '/tests/:name/:id/upload',
     upload.single('55CHbmatnFYH6UYy'),
     (req, res) => {
         if (req.file) {
-            validate.validate(req.file.filename, req.params.name)
+            validate.validate(req.file.filename, req.params.name, req.params.id)
             return res.status(201).send({
                 success: 'true',
                 message: 'successfully uploaded result',
