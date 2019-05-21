@@ -80,6 +80,7 @@ describe('basic REST GET tests', () => {
         expect(response.text).toContain('2');
     }); */
 
+    //server must be running
     test('get GET /evaluation/:testID', async () => {
         const response = await request(server).get('/evaluation/1');
         expect(response.status).toEqual(200);

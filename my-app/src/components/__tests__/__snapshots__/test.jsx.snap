@@ -7,3 +7,7 @@ exports[`Exam components test questioncounter rendered 1`] = `ShallowWrapper {}`
 exports[`Render Tests AUTH FORM renders correctly 1`] = `ShallowWrapper {}`;
 
 exports[`Render Tests SELECT BUTTON renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Render Tests question rendered 1`] = `ShallowWrapper {}`;
+
+exports[`Render Tests questioncounter rendered 1`] = `ShallowWrapper {}`;
