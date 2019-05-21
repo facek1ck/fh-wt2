@@ -13,7 +13,8 @@ export default class TestList extends Component {
     super(props);
 
     this.state = {
-      tests: []
+      tests: [],
+      results: []
     };
   }
 
@@ -21,9 +22,12 @@ export default class TestList extends Component {
     this.getTests();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevProps.store.online !== this.props.store.online) {
       this.getTests();
+    }
+    if (JSON.stringify(prevState.tests) !== JSON.stringify(this.state.tests)) {
+      this.getUserTestResults();
     }
   }
 
@@ -52,40 +56,74 @@ export default class TestList extends Component {
     }
   }
 
+  getUserTestResults() {
+    const { store } = this.props;
+    const { tests } = this.state;
+    if (store.online && tests.length > 0) {
+      Promise.all(
+        this.state.tests
+          .filter(t => (store.user.taken.indexOf(t.name) > -1 ? true : false))
+          .map(t =>
+            axios.get(
+              `http://gabriels-macbook.local:3000/stats/${store.user.id}/${
+                t.name
+              }`
+            )
+          )
+      )
+        .then(res => res.map(r => r.data))
+        .then(results => {
+          this.setState({
+            ...this.state,
+            results
+          });
+        });
+    }
+  }
+
   redirectToTest(quiz) {
     this.props.store.quiz = quiz;
-    console.log(this.props.store);
     this.props.handleClick("quiz");
   }
 
   renderTests() {
-    return this.state.tests.map(test => (
-      <Card
-        key={test.name}
-        style={{ width: "60%", margin: "30px auto" }}
-        extra={
-          <Button
-            type="primary"
-            onClick={() => this.redirectToTest(test)}
-            disabled={
-              this.props.store.user.taken.indexOf(test.name) > -1 ? true : false
-            }
-          >
-            Take Test
-          </Button>
+    return this.state.tests.map(test => {
+      let score = "";
+      const disabled =
+        this.props.store.user.taken.indexOf(test.name) > -1 ? true : false;
+      if (disabled) {
+        const result = this.state.results.find(r => r.name === test.name);
+        if (result) {
+          score = ` (${result.score}/${test.questions.length})`;
         }
-        title={test.name}
-      >
-        <Meta
-          avatar={
-            <Avatar style={{ color: "#f56a00", backgroundColor: "#fde3cf" }}>
-              {test.name[0]}
-            </Avatar>
+      }
+      const name = `${test.name}${score}`;
+      return (
+        <Card
+          key={test.name}
+          style={{ width: "60%", margin: "30px auto" }}
+          extra={
+            <Button
+              type="primary"
+              onClick={() => this.redirectToTest(test)}
+              disabled={disabled}
+            >
+              Take Test
+            </Button>
           }
-          description={test.description}
-        />
-      </Card>
-    ));
+          title={name}
+        >
+          <Meta
+            avatar={
+              <Avatar style={{ color: "#f56a00", backgroundColor: "#fde3cf" }}>
+                {test.name[0]}
+              </Avatar>
+            }
+            description={test.description}
+          />
+        </Card>
+      );
+    });
   }
   render() {
     const tests = this.renderTests();

@@ -9,11 +9,7 @@
       "Essen"
     ],
     "taken": [
-      "Computer",
-      "Geographie",
-      "Geographie",
-      "Essen",
-      "Essen"
+      "Computer"
     ]
   },
   {
@@ -24,9 +20,7 @@
       "Geographie",
       "Filme"
     ],
-    "taken": [
-      "Geographie"
-    ]
+    "taken": []
   },
   {
     "id": "3",
@@ -38,10 +32,7 @@
       "Essen",
       "Filme"
     ],
-    "taken": [
-      "Essen",
-      "Filme"
-    ]
+    "taken": []
   },
   {
     "id": "4",
@@ -53,11 +44,7 @@
       "Essen",
       "Filme"
     ],
-    "taken": [
-      "Computer",
-      "Geographie",
-      "Geographie"
-    ]
+    "taken": []
   },
   {
     "id": "5",
@@ -68,10 +55,6 @@
       "Essen",
       "Filme"
     ],
-    "taken": [
-      "Filme",
-      "Computer",
-      "Essen"
-    ]
+    "taken": []
   }
 ]

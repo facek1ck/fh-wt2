@@ -27,6 +27,8 @@ export default class QuizApp extends Component {
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.viewresults = this.viewresults.bind(this);
     this.renderer = this.renderer.bind(this);
+
+    this.startTime = Date.now();
   }
 
   handleAnswerSelected(e) {
@@ -213,7 +215,7 @@ export default class QuizApp extends Component {
           <div>
             {this.state.result ? null : (
               <Countdown
-                date={Date.now() + this.props.store.quiz.time * 60000}
+                date={this.startTime + this.props.store.quiz.time * 60000}
                 renderer={this.renderer}
               />
             )}
