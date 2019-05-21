@@ -173,6 +173,7 @@ export default class QuizApp extends Component {
         <div className="Quiz-header">
           <h2>Quiz Assignment :</h2>
         </div>
+
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
