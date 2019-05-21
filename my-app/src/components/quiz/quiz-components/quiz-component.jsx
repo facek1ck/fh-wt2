@@ -5,7 +5,6 @@ import AnswerOption from "./answer-option";
 
 import { Button } from "antd";
 
-<<<<<<< HEAD
 const Quiz = (props) => {
 
     function renderAnswerOptions(key,index) {
@@ -44,21 +43,6 @@ const Quiz = (props) => {
             {/* {props.counter == (props.questionTotal-1) && !(props.selectedAnswers.length == (props.questionTotal)) ? <p>Bitte alle Fragen beantworten.</p>:undefined} */}
         </div>
         </div>
-=======
-const Quiz = props => {
-  function renderAnswerOptions(key, index) {
-    return (
-      <AnswerOption
-        index={index}
-        key={key}
-        answerContent={key}
-        answerType={key}
-        answer={props.answer}
-        questionId={props.questionId}
-        selectedAnswer={props.selectedAnswer}
-        onAnswerSelected={props.onAnswerSelected}
-      />
->>>>>>> dashboard-rework
     );
   }
 
