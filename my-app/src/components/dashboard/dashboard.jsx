@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
       this.checkOnline();
     }, 5000);
 
-    axios.get("http://gabriels-macbook.local:3000/tests").then(res => {
+    axios.get("http://localhost:3000/tests").then(res => {
       this.setState({
         ...this.state,
         tests: res.data.tests
@@ -41,12 +41,12 @@ export default class Dashboard extends Component {
     if (prevState.selectedTest !== this.state.selectedTest) {
       axios
         .get(
-          `http://gabriels-macbook.local:3000/stats/${this.state.selectedTest}`
+          `http://localhost:3000/stats/${this.state.selectedTest}`
         )
         .then(resAnswers => {
           axios
             .get(
-              `http://gabriels-macbook.local:3000/tests/${
+              `http://localhost:3000/tests/${
                 this.state.selectedTest
               }/questions`
             )
@@ -68,7 +68,7 @@ export default class Dashboard extends Component {
   }
 
   downloadStats(name) {
-    axios.get(`http://gabriels-macbook.local:3000/stats/${name}`).then(res => {
+    axios.get(`http://localhost:3000/stats/${name}`).then(res => {
       var data =
         "text/json;charset=utf-8," +
         encodeURIComponent(JSON.stringify(res.data, null, 2));
@@ -81,7 +81,7 @@ export default class Dashboard extends Component {
 
   checkOnline() {
     axios
-      .get("http://gabriels-macbook.local:3000/requests/online")
+      .get("http://localhost:3000/requests/online")
       .then(res => {
         this.setState({
           ...this.state,

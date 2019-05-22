@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Avatar, Button } from "antd";
+import { Card, Avatar, Button, Upload, Icon, message } from "antd";
 import { observer, inject } from "mobx-react";
 import "./test-list.less";
 import axios from "axios";
@@ -35,7 +35,7 @@ export default class TestList extends Component {
     const { store } = this.props;
     if (store.online) {
       axios
-        .get(`http://gabriels-macbook.local:3000/users/${store.user.id}/tests`)
+        .get(`http://localhost:3000/users/${store.user.id}/tests`)
         .then(response => {
           console.log(response);
           this.setState({
@@ -65,7 +65,7 @@ export default class TestList extends Component {
           .filter(t => (store.user.taken.indexOf(t.name) > -1 ? true : false))
           .map(t =>
             axios.get(
-              `http://gabriels-macbook.local:3000/stats/${store.user.id}/${
+              `http://localhost:3000/stats/${store.user.id}/${
                 t.name
               }`
             )
@@ -87,10 +87,12 @@ export default class TestList extends Component {
   }
 
   renderTests() {
+    let uploadbutton
     return this.state.tests.map(test => {
       let score = "";
       const disabled =
         this.props.store.user.taken.indexOf(test.name) > -1 ? true : false;
+        uploadbutton= this.uploadButton(disabled);
       if (disabled) {
         const result = this.state.results.find(r => r.name === test.name);
         if (result) {
@@ -100,18 +102,21 @@ export default class TestList extends Component {
         }
       }
       const name = `${score}`;
+      
       return (
         <Card
           key={test.name}
           style={{ width: "60%", margin: "30px auto" }}
           extra={
-            <Button
+            <div><Button
               type="primary"
               onClick={() => this.redirectToTest(test)}
               disabled={disabled}
             >
               Take Test
             </Button>
+            {this.props.store.online?uploadbutton:undefined}
+            </div>
           }
           title={test.name}
         >
@@ -128,9 +133,36 @@ export default class TestList extends Component {
       );
     });
   }
+  uploadButton(disabled){
+    const props = {
+      customRequest:(options) => {
+       const blob = new Blob([options.file], {
+         type: "application/json"
+       });
+       const data = new FormData();
+    
+    data.append("55CHbmatnFYH6UYy", blob);
+      
+
+        let filename = options.file.name.replace('result','');
+        filename = filename.replace('.json','');
+        axios({
+          method: "post",
+          url: "http://localhost:3000/tests/"+filename+"/"+this.props.store.user.id+"/upload",
+          data: data
+         // headers: {"Content-Type": "multipart/form-data; bounday=----WebKitFormBoundaryqTqJIxvkWFYqvP5s"}
+        })
+      } ,
+    };
+    
+  return  <Upload {...props} disabled={disabled} >
+            <Button disabled={disabled}>
+              <Icon type="upload" /> Ergebnis hochladen
+            </Button>
+          </Upload>
+  }
   render() {
     const tests = this.renderTests();
-
-    return <div className="tests">{tests}</div>;
+    return <div><div className="tests">{tests}</div></div>;
   }
 }

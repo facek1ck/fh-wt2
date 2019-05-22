@@ -186,7 +186,7 @@ export default class QuizApp extends Component {
       axios({
         method: "post",
         url:
-          "http://gabriels-macbook.local:3000/tests/" +
+          "http://localhost:3000/tests/" +
           this.props.store.quiz.name +
           "/" +
           this.props.store.user.id +

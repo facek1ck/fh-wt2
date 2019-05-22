@@ -12,7 +12,7 @@ window.addEventListener("beforeunload", event => {
   };
   axios
     .post(
-      "http://gabriels-macbook.local:3000/requests/heartbeat",
+      "http://localhost:3000/requests/heartbeat",
       {
         lastName: this.props.store.user.lastName,
         online: false
